@@ -1,0 +1,67 @@
+"use client";
+import { useScroll, useMotionValueEvent, motion } from "framer-motion";
+import { cn } from "@/app/utils/cn";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "@public/logo.png";
+import { Teko } from "next/font/google";
+
+const teko = Teko({ subsets: ["latin"] });
+
+export default function Nav() {
+  const { scrollY } = useScroll();
+  //State to keep track if page is past scroll-margin.
+  const [active, setActive] = useState<Boolean>(false);
+
+  const scrollMargin = 20;
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest >= scrollMargin) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  });
+
+  return (
+    <motion.header
+      initial={{ y: "-100%" }}
+      animate={{ y: 0 }}
+      transition={{ type: "tween", duration: 0.2 }}
+      className={cn(
+        "z-50 sticky top-0 h-16 w-full flex items-center border-b",
+        active
+          ? "bg-white/60 border-gray-200 backdrop-blur-sm"
+          : "bg-transparent border-transparent"
+      )}
+    >
+      <nav className="container flex flex-row items-center justify-between">
+        <CompanyLogo />
+        <div className="">
+          <Link href="/components">Components</Link>
+          <Link href="/creative-components">Creative</Link>
+        </div>
+      </nav>
+    </motion.header>
+  );
+}
+
+const CompanyLogo = () => {
+  return (
+    <div className="">
+      <Link href="/" className="flex flex-row items-center flex-nowrap">
+        <div className="h-10 w-10 md:h-8 md:w-8">
+          <Image src={Logo} alt="Logo" width={50} height={50} />
+        </div>
+        <div className="ml-2 hidden md:block">
+          <h1
+            className={cn(teko.className, "text-3xl font-black tracking-wide")}
+          >
+            KineticKit
+          </h1>
+        </div>
+      </Link>
+    </div>
+  );
+};
