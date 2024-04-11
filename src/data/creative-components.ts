@@ -1,4 +1,8 @@
 export const creativeComponents = [
+  {
+    title: "Perspective Nav Dropdown",
+    href: "/creative-components/perspective-nav-dropdown",
+  },
   { title: "Dot Button", href: "/creative-components/dot-button" },
   { title: "Color Button", href: "/creative-components/color-button" },
   { title: "Glass Button", href: "/creative-components/glass-button" },
