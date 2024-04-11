@@ -10,7 +10,7 @@ export default function ColorButtonPage() {
       <PageHeader title="Employee Avatars" />
       <div className="pt-8 pb-12">
         <Tabs codeString={codeString}>
-          <EmployeeAvatars employees={employees} />
+          <EmployeeAvatars items={employees} />
         </Tabs>
       </div>
     </main>

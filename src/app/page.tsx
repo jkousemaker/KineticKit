@@ -1,25 +1,9 @@
-"use client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import { EmployeeAvatars } from "@/components/creative-components/Employee-Avatars";
+import { employees } from "@/data/employees";
 export default function HomePage() {
   return (
-    <main className="py-6 lg:py-8">
-      <Tabs
-        onValueChange={(e) => {
-          console.log(e);
-        }}
-        defaultValue="account"
-        className="w-[400px]"
-      >
-        <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
-        </TabsList>
-        <TabsContent value="account">
-          Make changes to your account here.
-        </TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
-      </Tabs>
+    <main className="py-6 lg:py-8 flex flex-row items-center justify-center mb-10 w-full">
+      <EmployeeAvatars items={employees} />
     </main>
   );
 }

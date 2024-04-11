@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useMotionValueEvent } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 type ScrollVariant = "normal" | "full";
@@ -38,13 +38,10 @@ function TextAlongPath({
   const container = useRef<HTMLDivElement>(null);
   const paths = useRef<SVGTextPathElement[]>([]);
   const { offset, multiplier } = variantMapping[variant];
-  console.log(offset);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: offset,
-  });
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest);
   });
   useEffect(() => {
     scrollYProgress.on("change", (e) => {
@@ -58,7 +55,7 @@ function TextAlongPath({
   }, []);
 
   return (
-    <div ref={container} className="w-full relative ">
+    <div ref={container} className="w-full relative">
       <svg className="w-full relative" viewBox={viewBox}>
         <path id={"curve"} fill="none" d={pathValues} />
         <text style={{ fontSize: textSize }} className="uppercase font-serif">
