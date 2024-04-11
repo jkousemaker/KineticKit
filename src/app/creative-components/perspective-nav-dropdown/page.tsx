@@ -45,29 +45,37 @@ const Header = () => {
           </Logo>
           <Nav>
             <NavItems>
-              {navItems.map((item: navItemsProps, i: number) => (
-                <NavItem key={i} item={item} setTab={setTab} tab={tab}>
-                  <div className="min-w-max shrink-0">
-                    <h4 className="leading-6 font-medium text-base mb-8 text-blue-300">
-                      Build AI
-                    </h4>
-                    <div className="">
-                      <p className="text-neutral-300">Test</p>
-                      <p className="text-neutral-300">Test</p>
-                    </div>
+              <NavItem item={navItems[0]} setTab={setTab} tab={tab}>
+                <div className="min-w-max shrink-0">
+                  <h4 className="leading-6 font-medium text-5xl mb-8 text-blue-300">
+                    Build AI
+                  </h4>
+                  <div className="w-full h-24 rounded-xl bg-blue-200"></div>
+                </div>
+              </NavItem>
+
+              <NavItem item={navItems[1]} setTab={setTab} tab={tab}>
+                <div className="min-w-max shrink-0">
+                  <h4 className="leading-6 font-medium text-xl mb-8 text-blue-300">
+                    Build AI
+                  </h4>
+                  <div className="">
+                    <p className="text-neutral-100">
+                      Come to use for your special things
+                    </p>
+                    <p className="text-neutral-300">Fast!</p>
                   </div>
-                  <div className="min-w-max shrink-0">
-                    <h4 className="leading-6 font-medium text-base mb-8 text-blue-300">
-                      Build AI
-                    </h4>
-                    <div className="">
-                      <p className="text-neutral-300">Test</p>
-                      <p className="text-neutral-300">Test</p>
-                      {i == 1 && <div className="w-[200px] h-5 bg-black"></div>}
-                    </div>
+                </div>
+                <div className="min-w-max shrink-0">
+                  <h4 className="leading-6 font-medium text-base mb-8 text-blue-300">
+                    Very quick
+                  </h4>
+                  <div className="">
+                    <p className="text-neutral-300">Test</p>
+                    <p className="text-neutral-300">Test</p>
                   </div>
-                </NavItem>
-              ))}
+                </div>
+              </NavItem>
             </NavItems>
           </Nav>
         </div>
