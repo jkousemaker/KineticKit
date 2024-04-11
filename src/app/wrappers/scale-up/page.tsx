@@ -8,9 +8,14 @@ export default function ScaleUpPage() {
     <main className="py-6 lg:py-8">
       <PageHeader title="Scale Up" />
       <Tabs codeString={codeString}>
-        <ScaleUp>
-          <h1 className="font-bold text-2xl">Scale Up Animation</h1>
-        </ScaleUp>
+        <div className="">
+          <ScaleUp duration={0.5}>
+            <PageHeader title="Cool Animation" />
+          </ScaleUp>
+          <ScaleUp delay={0.2} duration={0.5}>
+            <PageHeader title="Delay Cool Animation" />
+          </ScaleUp>
+        </div>
       </Tabs>
     </main>
   );
