@@ -63,6 +63,7 @@ const Header = () => {
                     <div className="">
                       <p className="text-neutral-300">Test</p>
                       <p className="text-neutral-300">Test</p>
+                      {i == 1 && <div className="w-[200px] h-5 bg-black"></div>}
                     </div>
                   </div>
                 </NavItem>
@@ -125,7 +126,7 @@ const NavItem = ({
           className="absolute pt-8 transform -translate-x-1/2 left-1/2"
           style={{ perspective: "1500px" }}
         >
-          <AnimatePresence initial={false}>
+          <AnimatePresence>
             {tab == item.name && (
               <motion.div
                 initial={{
@@ -143,10 +144,17 @@ const NavItem = ({
 
                   opacity: 0,
                 }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.43, 0.13, 0.23, 0.96],
+                }}
                 className="-top-[20px] flex flex-col items-center relative origin-[0px_0px]"
               >
                 <div className="relative z-50">
-                  <div className="w-[15px] h-[15px] bg-black shadow-md shadow-black relative top-2 rotate-45"></div>
+                  <motion.div
+                    layoutId="active-indicator"
+                    className="w-[15px] h-[15px] bg-black shadow-md shadow-black relative top-2 rotate-45"
+                  ></motion.div>
                 </div>
                 <div className="relative shadow-md rounded-2xl">
                   <div className="relative   origin-[0px_0px]">
