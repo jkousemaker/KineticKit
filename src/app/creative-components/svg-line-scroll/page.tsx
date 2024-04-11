@@ -1,7 +1,8 @@
 import { PageHeader } from "@/components/elements/Page-Header/Page-Header";
 import { Tabs } from "@/components/elements/Tabs/Tabs";
-import { TextAlongPath } from "@/components/creative-components/Text-Along-Path";
-export default function TextAlongPathPage() {
+
+import { SvgLineScroll } from "@/components/creative-components/Svg-Line-Scroll";
+export default function SvgLineScrollPage() {
   const codeString = `console.log("Hey")`;
   return (
     <main className="py-6 lg:py-8 !relative">
@@ -11,7 +12,7 @@ export default function TextAlongPathPage() {
       />
       <Tabs codeString={codeString}>
         <div className="!relative w-full py-[10rem]">
-          <TextAlongPath text="Gaby is super pretty" variant="full" />
+          <SvgLineScroll />
         </div>
       </Tabs>
       <div className="h-[300vh]"></div>
