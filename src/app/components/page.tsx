@@ -1,6 +1,6 @@
-export default function Components() {
+export default function ComponentsPage() {
   return (
-    <main>
+    <main className="py-6 lg:py-8">
       <h1>Components</h1>
     </main>
   );

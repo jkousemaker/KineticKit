@@ -77,8 +77,10 @@ const config = {
         custom2: "cubic-bezier(0.19, 1, 0.22, 1)",
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down":
+          "accordion-down 1s cubic-bezier(0.32, 0.99, 0.49, 0.99)",
+        "accordion-up":
+          "accordion-up 0.5s cubic-bezier(0.32, 0.99, 0.49, 0.99)",
       },
     },
   },

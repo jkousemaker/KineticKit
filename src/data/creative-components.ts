@@ -1,13 +1,19 @@
 export const creativeComponents = [
-  { title: "Creative Button", href: "/creative-components/creative-buttons" },
-  { title: "Animated Aurora", href: "/components/animated-aurora" },
-  { title: "Text along Path", href: "/components/text-along-path" },
-  { title: "SVG Line Scroll", href: "/components/svg-line-scroll" },
-  { title: "Text Opacity Scroll", href: "/components/text-opacity-scroll" },
+  { title: "Dot Button", href: "/creative-components/dot-button" },
+  { title: "Color Button", href: "/creative-components/color-button" },
+  { title: "Glass Button", href: "/creative-components/glass-button" },
+  { title: "Multi Step", href: "/creative-components/multi-step" },
+  { title: "Animated Aurora", href: "/creative-components/animated-aurora" },
+  { title: "Text along Path", href: "/creative-components/text-along-path" },
+  { title: "SVG Line Scroll", href: "/creative-components/svg-line-scroll" },
+  {
+    title: "Text Opacity Scroll",
+    href: "/creative-components/text-opacity-scroll",
+  },
   {
     title: "Timeline Perspective Scroll",
-    href: "/components/timeline-perspective-scroll",
+    href: "/creative-components/timeline-perspective-scroll",
   },
-  { title: "Parallax Scroll", href: "/components/parallax-scroll" },
-  { title: "Initial Loader", href: "/components/initial-loader" },
+  { title: "Parallax Scroll", href: "/creative-components/parallax-scroll" },
+  { title: "Initial Loader", href: "/creative-components/initial-loader" },
 ];

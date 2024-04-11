@@ -1,3 +1,5 @@
 export const components = [
-  { title: "Card Snug", href: "/components/card-snug" },
+  { title: "Snug Card", href: "/components/snug-card" },
+  { title: "Accordion", href: "/components/accordion" },
+  { title: "Tab Buttons", href: "/components/tab-buttons" },
 ];
