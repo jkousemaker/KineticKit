@@ -5,10 +5,6 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { creativeComponents as links } from "@/data/creative-components";
 
 const Accordion = AccordionPrimitive.Root;
 

@@ -2,6 +2,7 @@ export const creativeComponents = [
   { title: "Dot Button", href: "/creative-components/dot-button" },
   { title: "Color Button", href: "/creative-components/color-button" },
   { title: "Glass Button", href: "/creative-components/glass-button" },
+  { title: "Shiny Button", href: "/creative-components/shiny-button" },
   { title: "Multi Step", href: "/creative-components/multi-step" },
   { title: "Employee Avatars", href: "/creative-components/employee-avatars" },
   { title: "Animated Aurora", href: "/creative-components/animated-aurora" },
