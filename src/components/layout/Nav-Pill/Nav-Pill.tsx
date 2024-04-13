@@ -41,7 +41,7 @@ const NavPill = ({}) => {
   );
 
   return (
-    <div className="w-full sticky inset-0 py-2 px-4">
+    <div className="w-full sticky inset-0 py-2 px-4 z-50">
       <motion.header
         style={{
           height: useTransform(scrollYBoundedProgressDelayed, [0, 1], [80, 50]),

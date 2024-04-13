@@ -21,24 +21,24 @@ export default function Aside() {
       <div className="relative overflow-hidden h-full py-6 pr-6 lg:py-8">
         <Section
           title="Getting started"
-          href="/getting-started"
+          href="/blog/getting-started"
           links={starters}
         />
         <Section
           title="Creative"
-          href="/creative-components"
+          href="/blog/creative-components"
           links={creativeComponents}
           toggleable={true}
         />
         <Section
           title="Components"
-          href="/components"
+          href="/blog/components"
           links={components}
           toggleable={true}
         />
         <Section
           title="Wrappers"
-          href="/wrappers"
+          href="/blog/wrappers"
           links={wrappers}
           toggleable={true}
         />

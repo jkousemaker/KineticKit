@@ -8,7 +8,7 @@ export default function SectionsLayout({
   return (
     <div className="">
       <NavPill />
-      <div className="h-[500vh]">{children}</div>
+      <div className="relative z-10">{children}</div>
     </div>
   );
 }
