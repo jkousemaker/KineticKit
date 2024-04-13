@@ -1,11 +1,14 @@
+import { NavPill } from "@/components/layout/Nav-Pill";
+
 export default function SectionsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
-      {children}
+    <div className="">
+      <NavPill />
+      <div className="h-[500vh]">{children}</div>
     </div>
   );
 }

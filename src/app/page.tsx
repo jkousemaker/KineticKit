@@ -1,6 +1,3 @@
-"use client";
-import { useRef } from "react";
-
 import { DotButton } from "@/components/creative-components/buttons/Dot-Button";
 import { EmployeeAvatars } from "@/components/creative-components/Employee-Avatars";
 import { employees } from "@/data/employees";
@@ -9,13 +6,12 @@ import { ImageTilt } from "@/components/creative-components/Image-Tilt";
 import { AnimatedLightning } from "@/components/creative-components/Animated-Lightning";
 import { Nav } from "@/components/layout/Nav";
 export default function HomePage() {
-  const container = useRef<HTMLDivElement>(null);
   return (
     <div>
       <Nav />
       <div>
         <main className="w-full relative overflow-clip">
-          <div ref={container} className="">
+          <div className="">
             <div className="relative  p-2 md:p-4 lg:p-10 flex flex-col items-center justify-center z-20">
               <div className="relative flex flex-col items-center justify-center mt-10">
                 <h1 className="text-4xl md:text-6xl font-bold mt-20 mb-28 relative text-center text-zinc-700 max-w-6xl mx-auto !leading-snug __className_399708">
@@ -53,11 +49,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="z-10">
-              <ImageTilt
-                container={container}
-                image={Phones}
-                offsets={["start start", "end end"]}
-              />
+              <ImageTilt image={Phones} offsets={["start end", "end end"]} />
             </div>
           </div>
         </main>

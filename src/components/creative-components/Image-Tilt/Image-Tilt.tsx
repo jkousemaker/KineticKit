@@ -20,16 +20,13 @@ type OffsetType =
   | "center center";
 
 interface ImageTiltProps extends React.HTMLAttributes<HTMLDivElement> {
-  container: React.RefObject<HTMLDivElement>;
   image: StaticImageData | string;
   offsets?: [OffsetType, OffsetType];
 }
 
 const ImageTilt = React.forwardRef<HTMLDivElement, ImageTiltProps>(
-  (
-    { container, image, offsets = ["start end", "end start"], ...props },
-    ref
-  ) => {
+  ({ image, offsets = ["start end", "end start"], ...props }, ref) => {
+    const container = React.useRef<HTMLDivElement>(null);
     const { scrollYProgress: progress } = useScroll({
       target: container,
       offset: offsets,
@@ -38,8 +35,13 @@ const ImageTilt = React.forwardRef<HTMLDivElement, ImageTiltProps>(
     const y = useTransform(progress, [0, 1], [-200, 0]);
     const rotateX = useTransform(progress, [0, 1], [10, 1]);
     return (
-      <div className=" relative [perspective:800px]  w-full hover:scale-110 origin-bottom transition-transform  min-h-[12rem] flex items-end px-6 bg-gradient-to-b from-transparent to-gray-100">
+      <div
+        ref={container}
+        className=" relative [perspective:800px]  w-full hover:scale-110 origin-bottom transition-transform  min-h-[12rem] flex items-end px-6 bg-gradient-to-b from-transparent to-gray-100"
+      >
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           style={{ scale, y, rotateX }}
           className="relative origin-bottom flex justify-center items-center  z-20  mx-auto -mb-20  md:-mb-20 h-full w-full "
         >

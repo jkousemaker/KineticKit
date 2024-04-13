@@ -9,7 +9,7 @@ import { Teko } from "next/font/google";
 
 const teko = Teko({ subsets: ["latin"] });
 
-export default function Nav() {
+const Nav = ({}) => {
   const { scrollY } = useScroll();
   //State to keep track if page is past scroll-margin.
   const [active, setActive] = useState<Boolean>(false);
@@ -49,7 +49,7 @@ export default function Nav() {
       </nav>
     </motion.header>
   );
-}
+};
 
 const CompanyLogo = () => {
   return (
@@ -69,3 +69,5 @@ const CompanyLogo = () => {
     </div>
   );
 };
+
+export { Nav, CompanyLogo };

@@ -1,2 +1,2 @@
-import Nav from "./Nav";
-export { Nav };
+import { Nav, CompanyLogo } from "./Nav";
+export { Nav, CompanyLogo };
