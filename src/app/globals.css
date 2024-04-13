@@ -77,3 +77,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .neumorph-header {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    letter-spacing: -0.1rem;
+  }
+}

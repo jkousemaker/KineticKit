@@ -1,25 +1,40 @@
 export const creativeComponents = [
   {
     title: "Perspective Nav Dropdown",
-    href: "/creative-components/perspective-nav-dropdown",
+    href: "/blog/creative-components/perspective-nav-dropdown",
   },
-  { title: "Dot Button", href: "/creative-components/dot-button" },
-  { title: "Color Button", href: "/creative-components/color-button" },
-  { title: "Glass Button", href: "/creative-components/glass-button" },
-  { title: "Shiny Button", href: "/creative-components/shiny-button" },
-  { title: "Multi Step", href: "/creative-components/multi-step" },
-  { title: "Employee Avatars", href: "/creative-components/employee-avatars" },
-  { title: "Animated Aurora", href: "/creative-components/animated-aurora" },
-  { title: "Text along Path", href: "/creative-components/text-along-path" },
-  { title: "SVG Line Scroll", href: "/creative-components/svg-line-scroll" },
+  { title: "Dot Button", href: "/blog/creative-components/dot-button" },
+  { title: "Color Button", href: "/blog/creative-components/color-button" },
+  { title: "Glass Button", href: "/blog/creative-components/glass-button" },
+  { title: "Shiny Button", href: "/blog/creative-components/shiny-button" },
+  { title: "Multi Step", href: "/blog/creative-components/multi-step" },
+  {
+    title: "Employee Avatars",
+    href: "/blog/creative-components/employee-avatars",
+  },
+  {
+    title: "Animated Aurora",
+    href: "/blog/creative-components/animated-aurora",
+  },
+  {
+    title: "Text along Path",
+    href: "/blog/creative-components/text-along-path",
+  },
+  {
+    title: "SVG Line Scroll",
+    href: "/blog/creative-components/svg-line-scroll",
+  },
   {
     title: "Text Opacity Scroll",
-    href: "/creative-components/text-opacity-scroll",
+    href: "/blog/creative-components/text-opacity-scroll",
   },
   {
     title: "Timeline Perspective Scroll",
-    href: "/creative-components/timeline-perspective-scroll",
+    href: "/blog/creative-components/timeline-perspective-scroll",
   },
-  { title: "Parallax Scroll", href: "/creative-components/parallax-scroll" },
-  { title: "Initial Loader", href: "/creative-components/initial-loader" },
+  {
+    title: "Parallax Scroll",
+    href: "/blog/creative-components/parallax-scroll",
+  },
+  { title: "Initial Loader", href: "/blog/creative-components/initial-loader" },
 ];

@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { Nav } from "@/components/layout/Nav";
-import { Aside } from "@/components/layout/Aside";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,15 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Nav />
-        <div className="">
-          <div className="container md:grid md:gap-6 md:grid-cols-[220px_minmax(0,1fr)] lg:gap-10 lg:grid-cols-[240px_minmax(0,1fr)]">
-            <Aside />
-            {children}
-          </div>
-        </div>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

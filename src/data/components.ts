@@ -1,6 +1,6 @@
 export const components = [
-  { title: "Snug Card", href: "/components/snug-card" },
-  { title: "Accordion", href: "/components/accordion" },
-  { title: "Tab Buttons", href: "/components/tab-buttons" },
-  { title: "Tabs", href: "/components/tabs" },
+  { title: "Snug Card", href: "/blog/components/snug-card" },
+  { title: "Accordion", href: "/blog/components/accordion" },
+  { title: "Tab Buttons", href: "/blog/components/tab-buttons" },
+  { title: "Tabs", href: "/blog/components/tabs" },
 ];

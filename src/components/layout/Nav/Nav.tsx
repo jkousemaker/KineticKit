@@ -26,9 +26,13 @@ export default function Nav() {
 
   return (
     <motion.header
-      initial={{ y: "-100%" }}
-      animate={{ y: 0 }}
-      transition={{ type: "tween", duration: 0.2 }}
+      initial={{ y: "-100%", filter: "blur(40px)" }}
+      animate={{ y: 0, filter: "blur(0px)" }}
+      transition={{
+        type: "tween",
+        duration: 0.35,
+        ease: [0.45, 0.05, 0.55, 0.95],
+      }}
       className={cn(
         "z-50 sticky top-0 h-16 w-full flex items-center border-b",
         active
@@ -40,7 +44,7 @@ export default function Nav() {
         <CompanyLogo />
         <div className="">
           <Link href="/components">Components</Link>
-          <Link href="/creative-components">Creative</Link>
+          <Link href="/sections">Sections</Link>
         </div>
       </nav>
     </motion.header>

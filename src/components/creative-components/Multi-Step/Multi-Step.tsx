@@ -14,6 +14,12 @@ import {
 function MultiStep({}) {
   const length = 4;
   const [step, setStep] = useState<number>(1);
+  function setNext() {
+    if (step >= length + 1) {
+      return;
+    }
+    setStep(step + 1);
+  }
   function setPrevious() {
     if (step === 1) {
       return;
@@ -49,7 +55,7 @@ function MultiStep({}) {
         <DotButton size="sm" onClick={setPrevious} direction="left">
           Previous
         </DotButton>
-        <DotButton size="sm" onClick={() => setStep(step + 1)}>
+        <DotButton size="sm" onClick={setNext}>
           Next
         </DotButton>
       </div>
@@ -59,12 +65,9 @@ function MultiStep({}) {
 
 const ProgressBar = ({ state, length }: { state: number; length: number }) => {
   const step = useSpring(state);
-  const progress = useTransform(step, [1, length], ["0%", "100%"]);
-  useMotionValueEvent(progress, "change", (latest) => {
-    console.log(latest);
-  });
+  const progress = useTransform(step, [1, length + 1], ["0%", "100%"]);
+
   useEffect(() => {
-    console.log(state);
     step.set(state);
   }, [state]);
   return (
@@ -73,29 +76,14 @@ const ProgressBar = ({ state, length }: { state: number; length: number }) => {
         style={{ width: progress }}
         className="relative w-full h-full bg-[#cfadff] origin-left"
       >
-        <div className="absolute w-full h-full scale-y-[3] inset-0">
-          <div className="absolute h-full w-full inset-0 bg-[#cfadff] blur-[1px] z-50"></div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [1, 0],
-              transition: {
-                duration: 1,
-                repeat: Infinity,
-                repeatType: "mirror",
-              },
+        <div className="absolute h-full w-auto aspect-square right-0 scale-[2]">
+          <div
+            className="bg-[#8d00df] rounded-full h-full w-full relative z-50"
+            style={{
+              boxShadow:
+                "0px 0px 3px 2px rgba(141,0,223,0.67), 0px 0px 9px 7px rgb(141 0 223 / 45%)",
             }}
-          >
-            <div className="absolute h-full w-full inset-0 bg-[#cfadff] scale-y-[2] blur-[2px] z-40"></div>
-          </motion.div>
-        </div>
-
-        <div className="absolute h-[300%] w-auto aspect-square right-0 -translate-y-1/3 scale-50">
-          <div className="bg-[#f23cd0] rounded-full h-full w-full relative z-50"></div>
-          <div className="bg-[#f23cd0] rounded-full h-full w-full absolute z-30 inset-0 scale-[2] blur-[2px]"></div>
-          <div className="bg-[#f23cd0]/80 rounded-full h-full w-full absolute z-20 inset-0 scale-[4] blur-[2px]"></div>
-          <div className="bg-[#f23cd0]/40 rounded-full h-full w-full absolute z-10 inset-0 scale-[7] blur-[6px]"></div>
-          <div className="bg-[#f23cd0]/80 rounded-full h-full w-full absolute z-0 inset-0 scale-[10] blur-[5px]"></div>
+          ></div>
         </div>
       </motion.div>
     </div>
@@ -105,6 +93,7 @@ const ProgressBar = ({ state, length }: { state: number; length: number }) => {
 const StepIndicator = ({ value, state }: { value: number; state: number }) => {
   const isActive = state === value;
   const isCompleted = state > value;
+
   return (
     <div
       className={cn(
@@ -147,7 +136,7 @@ const CheckMark = () => {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      stroke-width={3}
+      strokeWidth={3}
     >
       <motion.path
         initial={{ pathLength: 0, opacity: 0 }}
