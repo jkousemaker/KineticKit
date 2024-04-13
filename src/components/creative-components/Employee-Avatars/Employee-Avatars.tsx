@@ -79,6 +79,7 @@ const EmployeeAvatars = ({
             </motion.div>
           )}
           <Image
+            priority
             src={item.image}
             width={100}
             height={100}

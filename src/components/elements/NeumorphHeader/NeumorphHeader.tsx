@@ -8,7 +8,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
   mode?: "light" | "dark";
 }
 
-const NeumorphHeader = React.forwardRef<HTMLButtonElement, HeaderProps>(
+const NeumorphHeader = React.forwardRef<HTMLHeadingElement, HeaderProps>(
   ({ className, asChild = false, mode = "light", ...props }, ref) => {
     const Comp = asChild ? Slot : "h1";
     const color =

@@ -43,7 +43,7 @@ export default function Nav() {
       <nav className="container flex flex-row items-center justify-between">
         <CompanyLogo />
         <div className="">
-          <Link href="/components">Components</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/sections">Sections</Link>
         </div>
       </nav>
