@@ -1,5 +1,13 @@
 export const sections = [
   {
+    title: "Card Hero",
+    description: "A modern card hero section",
+    href: "/sections/card-hero",
+    stack: ["Next.js", "framer-motion", "TypeScript", "Tailwind CSS"],
+    badge: "In Progress",
+    imgSrc: "/screenshots/card-hero.png",
+  },
+  {
     title: "Sticky Showcase",
     description: "Not finished",
     href: "/sections/sticky-showcase",
