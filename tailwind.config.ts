@@ -59,6 +59,9 @@ const config = {
         active: {
           DEFAULT: "hsl(var(--theme-active))",
         },
+        offwhite: {
+          DEFAULT: "hsl(var(--offwhite))",
+        },
       },
 
       borderRadius: {
