@@ -11,9 +11,9 @@ import {
 export default function CardHeroPage({}) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return [0, 0];
 
     const rect = ref.current.getBoundingClientRect();
@@ -57,7 +57,7 @@ export interface GlassButtonProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const TiltCard = React.forwardRef<HTMLDivElement, GlassButtonProps>(
-  ({ className, variant, size, children, x, y, ...props }, ref) => {
+  ({ className, children, x, y, ...props }, ref) => {
     const xSpring = useSpring(x);
     const ySpring = useSpring(y);
     const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
