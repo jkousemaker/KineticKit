@@ -14,8 +14,10 @@ const starters = [
   { title: "Usage", href: "/docs/usage" },
   { title: "Examples", href: "/docs/examples" },
 ];
-
+import { usePathname } from "next/navigation";
 export default function Aside() {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <aside>
       <div className="relative overflow-hidden h-full py-6 pr-6 lg:py-8">

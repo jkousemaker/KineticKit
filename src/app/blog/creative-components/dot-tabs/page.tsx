@@ -50,8 +50,8 @@ const DotTab = ({
     hoveredTab === tab.id
       ? true
       : activeTab === tab.id && hoveredTab == null
-        ? true
-        : false;
+      ? true
+      : false;
   return (
     <li
       className="relative flex justify-center"
@@ -78,8 +78,8 @@ const DotIndicator = () => {
   return (
     <motion.div
       layoutId="Dot-Tabs-Indicator"
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      className="bg-active h-2 w-2 rounded-full absolute top-11"
+      transition={{ type: "spring", stiffness: 200, damping: 30, velocity: 1 }}
+      className="bg-active h-3 w-3 rounded-full absolute top-12"
     ></motion.div>
   );
 };

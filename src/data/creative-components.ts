@@ -1,4 +1,5 @@
 export const creativeComponents = [
+  { title: "Magnified Dock", href: "/blog/creative-components/magnified-dock" },
   { title: "Dot Tabs", href: "/blog/creative-components/dot-tabs" },
   { title: "Stretchy Tabs", href: "/blog/creative-components/stretchy-tabs" },
   { title: "Expandable Nav", href: "/blog/creative-components/expandable-nav" },
@@ -17,10 +18,6 @@ export const creativeComponents = [
     href: "/blog/creative-components/employee-avatars",
   },
   {
-    title: "Animated Aurora",
-    href: "/blog/creative-components/animated-aurora",
-  },
-  {
     title: "Text along Path",
     href: "/blog/creative-components/text-along-path",
   },
@@ -32,13 +29,4 @@ export const creativeComponents = [
     title: "Text Opacity Scroll",
     href: "/blog/creative-components/text-opacity-scroll",
   },
-  {
-    title: "Timeline Perspective Scroll",
-    href: "/blog/creative-components/timeline-perspective-scroll",
-  },
-  {
-    title: "Parallax Scroll",
-    href: "/blog/creative-components/parallax-scroll",
-  },
-  { title: "Initial Loader", href: "/blog/creative-components/initial-loader" },
 ];
