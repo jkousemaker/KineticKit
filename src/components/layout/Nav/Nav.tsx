@@ -1,14 +1,28 @@
 "use client";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { cn } from "@/app/utils/cn";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@public/logo.png";
 import { Teko } from "next/font/google";
+import * as React from "react";
 
 const teko = Teko({ subsets: ["latin"] });
-
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-xl border bg-card text-card-foreground shadow",
+      className
+    )}
+    {...props}
+  />
+));
+Card.displayName = "Card";
 const Nav = ({}) => {
   const { scrollY } = useScroll();
   //State to keep track if page is past scroll-margin.

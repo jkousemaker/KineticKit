@@ -5,11 +5,10 @@ import {
   useMotionTemplate,
   useMotionValue,
   animate,
-  useScroll,
   useTransform,
   MotionValue,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const colors = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 const gaps = ["100%", "160%", "100%", "110%"];

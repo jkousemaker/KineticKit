@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { LayoutLoader } from "@/components/sections/Layout-Loader/Layout-Loader";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ScaleUp } from "@/components/wrappers/Scale-Up";
 export default function LayoutLoaderPage() {
   const [loading, setLoading] = useState(true);
