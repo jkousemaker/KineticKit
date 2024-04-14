@@ -56,6 +56,9 @@ const config = {
           DEFAULT: "hsl(var(--theme-primary))",
           light: "hsl(var(--theme-primary-light))",
         },
+        active: {
+          DEFAULT: "hsl(var(--theme-active))",
+        },
       },
 
       borderRadius: {

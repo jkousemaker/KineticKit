@@ -5,6 +5,7 @@ import Phones from "@public/phones.png";
 import { ImageTilt } from "@/components/creative-components/Image-Tilt";
 import { AnimatedLightning } from "@/components/creative-components/Animated-Lightning";
 import { Nav } from "@/components/layout/Nav";
+
 export default function HomePage() {
   return (
     <div>
@@ -14,7 +15,7 @@ export default function HomePage() {
           <div className="">
             <div className="relative  p-2 md:p-4 lg:p-10 flex flex-col items-center justify-center z-20">
               <div className="relative flex flex-col items-center justify-center mt-10">
-                <h1 className="text-4xl md:text-6xl font-bold mt-20 mb-28 relative text-center text-zinc-700 max-w-6xl mx-auto !leading-snug __className_399708">
+                <h1 className="text-4xl md:text-6xl font-bold mt-20 mb-28 relative text-center text-foreground max-w-6xl mx-auto !leading-snug __className_399708">
                   Crafting High-Performance Websites{" "}
                   <br className="hidden md:block"></br>
                   with{" "}

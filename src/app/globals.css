@@ -36,6 +36,8 @@
 
     --theme-primary: 277.41 79.44% 20.98%;
     --theme-primary-light: 277.41 97.29% 32.8%;
+
+    --theme-active: 40 100% 73%;
   }
 
   .dark {
