@@ -41,7 +41,7 @@ const NavPill = ({}) => {
   );
 
   return (
-    <div className="w-full sticky inset-0 py-2 px-4 z-50">
+    <div className="w-full fixed top-0 left-0 py-2 px-4 z-50 pointer-events-none">
       <motion.header
         style={{
           height: useTransform(scrollYBoundedProgressDelayed, [0, 1], [80, 50]),
@@ -51,7 +51,7 @@ const NavPill = ({}) => {
             [1, 0.1]
           )})`,
         }}
-        className=" flex max-w-xl mx-auto border-2 rounded-full py-2 px-6"
+        className=" flex max-w-xl mx-auto border-2 rounded-full py-2 px-6 pointer-events-auto"
       >
         <nav className=" flex w-full items-center justify-between">
           <CompanyLogo />

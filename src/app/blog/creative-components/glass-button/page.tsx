@@ -3,15 +3,31 @@ import { GlassButton } from "@/components/creative-components/buttons/Glass-Butt
 import { PageHeader } from "@/components/elements/Page-Header/Page-Header";
 
 export default function GlassButtonPage() {
-  const codeString = ``;
+  const codeString = `import { GlassButton } from "@/components/Glass-Button";
+
+  export default function Page() {
+    return (
+      <main>
+        <GlassButton variant="light" size="default"></GlassButton>
+      </main>
+    );
+  }
+  `;
   return (
     <main className="py-6 lg:py-8">
       <PageHeader title="Glass Button" />
       <div className="pt-8 pb-12">
         <Tabs codeString={codeString}>
-          <GlassButton variant="default" size="default">
-            Hey
-          </GlassButton>
+          <div className="p-5 bg-black">
+            <GlassButton variant="default" size="default">
+              <p>Default</p>
+            </GlassButton>
+          </div>
+          <div className="ml-5">
+            <GlassButton variant="light" size="default">
+              <p>Light</p>
+            </GlassButton>
+          </div>
         </Tabs>
       </div>
     </main>

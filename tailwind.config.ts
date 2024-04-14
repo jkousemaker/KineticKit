@@ -76,6 +76,7 @@ const config = {
       transitionTimingFunction: {
         custom: "cubic-bezier(0.32, 0.99, 0.49, 0.99)",
         custom2: "cubic-bezier(0.19, 1, 0.22, 1)",
+        css: "cubic-bezier(.785, .135, .15, .86)",
       },
       animation: {
         "accordion-down":

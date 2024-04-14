@@ -1,37 +1,21 @@
-"use client";
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { motion, MotionConfig } from "framer-motion";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
+import { Slot } from "@radix-ui/react-slot";
 
 const glassButtonVariants = cva(
-  " relative gap-[15px] hover:scale-110 active:scale-100  focus:scale-110 focus:ring ring-slate-600 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 overflow-hidden",
+  "flex flex-col justify-center border-0 items-center relative cursor-pointer z-50 focus:ring  whitespace-nowrap transition-all duration-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        dark: "bg-slate-900 text-white ",
+          " bg-transparent !text-[#b3ffdf] group-hover:translate-y-[5px]  !shadow-[#80ffca]/25 !ring-[#b3ffdf]",
+        light:
+          "!text-theme bg-transparent group-hover:translate-y-[5px] !shadow-theme/50 !ring-theme-light",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        pill: "px-[25px] py-[15px] rounded-[100rem]",
-        padded: "h-10 rounded-lg px-12 py-8 text-md",
-        xl: "h-12 rounded-md px-10 py-3 text-lg",
-        icon: "h-9 w-9",
+        default:
+          "h-[50px] w-[160px] rounded-lg text-base shadow-[inset_0px_-3px_15px_0px]",
       },
     },
     defaultVariants: {
@@ -42,33 +26,65 @@ const glassButtonVariants = cva(
 );
 
 export interface GlassButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof glassButtonVariants> {
-  href?: string;
+  asChild?: boolean;
 }
 
-const GlassButton = React.forwardRef<
-  HTMLButtonElement | HTMLAnchorElement,
-  GlassButtonProps
->(({ className, children, href, variant, size, ...props }, ref) => {
-  const button = React.useRef<HTMLButtonElement>(null);
-  const link = React.useRef<HTMLAnchorElement>(null);
-  return (
-    <div className="p-10 bg-slate-900">
-      <Button
-        className={cn(
-          glassButtonVariants({ variant, size, className }),
-          "h-[50px] w-[160px] border-none rounded-xl bg-[#4dffb503] shadow-[0px_-3px_15px_0px_#80ffca40_inset] text-[#b3ffdf] group overflow-visible"
-        )}
-        style={{}}
-      >
-        {children}
-        <span className="w-[100px] h-[60px] bg-[#80ffca40] rounded-full blur-[20px] absolute -bottom-1/2 transition-all duration-200 group-hover:opacity-80 ease-out"></span>
-      </Button>
-    </div>
-  );
-});
+const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
+  ({ className, asChild = false, variant, size, children, ...props }, ref) => {
+    const Component = asChild ? Slot : "button";
+    return (
+      <div className="relative group flex justify-center">
+        <GlassButtonShadow variant={variant} size={size} />
+        <Component
+          className={cn(glassButtonVariants({ variant, size, className }))}
+          ref={ref}
+          {...props}
+        >
+          {children}
+        </Component>
+      </div>
+    );
+  }
+);
 
 GlassButton.displayName = "GlassButton";
 
+const glassButtonShadowVariants = cva(
+  "mx-auto   rounded-full  absolute -bottom-1/2 transition-all duration-200  ease-out",
+  {
+    variants: {
+      variant: {
+        default: "bg-[#80ffca] opacity-40 group-hover:opacity-20",
+        light: "bg-theme opacity-40 group-hover:opacity-20",
+      },
+      size: {
+        default: "w-[100px] h-[60px] blur-[20px]",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+export interface GlassButtonShadowProps
+  extends React.ButtonHTMLAttributes<HTMLSpanElement>,
+    VariantProps<typeof glassButtonShadowVariants> {}
+
+const GlassButtonShadow = React.forwardRef<
+  HTMLSpanElement,
+  GlassButtonShadowProps
+>(({ className, variant, size, ...props }, ref) => {
+  return (
+    <span
+      className={cn(glassButtonShadowVariants({ variant, size, className }))}
+      ref={ref}
+      {...props}
+    />
+  );
+});
+GlassButtonShadow.displayName = "GlassButtonShadow";
 export { GlassButton, glassButtonVariants };

@@ -1,8 +1,11 @@
 export const creativeComponents = [
+  { title: "Stretchy Tabs", href: "/blog/creative-components/stretchy-tabs" },
+  { title: "Expandable Nav", href: "/blog/creative-components/expandable-nav" },
   {
     title: "Perspective Nav Dropdown",
     href: "/blog/creative-components/perspective-nav-dropdown",
   },
+  { title: "Swap Button", href: "/blog/creative-components/swap-button" },
   { title: "Dot Button", href: "/blog/creative-components/dot-button" },
   { title: "Color Button", href: "/blog/creative-components/color-button" },
   { title: "Glass Button", href: "/blog/creative-components/glass-button" },
