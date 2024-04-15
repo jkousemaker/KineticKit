@@ -7,7 +7,12 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-
+import { TextStagger } from "@/components/wrappers/Text-Stagger";
+import { BubbleLetters } from "@/components/wrappers/Bubble-Letters";
+import { ScaleUp } from "@/components/wrappers/Scale-Up";
+import { FadeIn } from "@/components/wrappers/Fade-In";
+import { CtaButton } from "@/components/creative-components/buttons/Cta-Button/Cta-Button";
+import { ArrowDownIcon } from "@radix-ui/react-icons";
 const ROTATION_RANGE = 20.5;
 const HALF_ROTATION_RANGE = 20.5 / 2;
 
@@ -29,7 +34,6 @@ export default function CardHeroPage({}) {
 
     bgX.set(clientX - left);
     bgY.set(clientY - top);
-    console.log(rect);
 
     const width = rect.width;
     const height = rect.height;
@@ -45,22 +49,41 @@ export default function CardHeroPage({}) {
     y.set(rY);
   };
 
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
   return (
-    <main
-      className="min-h-screen"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ perspective: "100px" }}
-    >
-      <div className="grid w-full place-content-center bg-gradient-to-br from-indigo-500/50 to-violet-500/50 px-4 py-12 text-slate-900 h-screen relative">
+    <main className="h-screen interactable">
+      <div
+        onMouseMove={handleMouseMove}
+        style={{ perspective: "5000px" }}
+        className="z-20 grid w-full place-content-center bg-gradient-to-br from-indigo-500/20 to-violet-500/20 px-4 py-12 text-slate-900 h-screen absolute inset-0"
+      >
+        <h2 className="text-[11rem] lowercase text-white text-center  -tracking-[0.08em] relative z-50 font-semibold">
+          <span className="block -ml-[.5rem] leading-[0.3]">
+            <ScaleUp>
+              <BubbleLetters>conversion </BubbleLetters>
+            </ScaleUp>
+          </span>
+
+          <span className=" leading-[1.3] flex flex-row">
+            <TextStagger className="text-[11rem] lowercase text-white text-center  -tracking-[0.08em] relative z-50 font-semibold">
+              through
+            </TextStagger>
+          </span>
+          <FadeIn>
+            <span className="block ml-[14.3rem] leading-[.5]">components</span>
+          </FadeIn>
+        </h2>
+        <div className="absolute bottom-0 left-0 -ml-14 -mb-14">
+          <CtaButton className="border-none">
+            <div className="border-2 border-theme-light rounded-full absolute w-full h-full inset-0">
+              <ArrowDownIcon className="h-14 w-14 text-black" />
+            </div>
+          </CtaButton>
+        </div>
+        <TiltCard x={x} y={y} ref={ref} />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 ? 1 : 0 }}
-          className="absolute w-full h-full inset-0  z-0"
+          className="absolute w-full h-full mix-blend-difference bottom-0 left-0  z-0"
           style={{
             background: useMotionTemplate`
             radial-gradient(
@@ -71,7 +94,6 @@ export default function CardHeroPage({}) {
           `,
           }}
         ></motion.div>
-        <TiltCard x={x} y={y} ref={ref} />
       </div>
     </main>
   );
@@ -96,34 +118,45 @@ const TiltCard = React.forwardRef<HTMLDivElement, GlassButtonProps>(
     });
     const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 360, damping: 40 }}
-        ref={ref}
-        style={{
-          transformStyle: "preserve-3d",
-          transform,
-        }}
-        className="relative  back     bg-gradient-to-br from-indigo-300 to-violet-300 rounded-[50px] h-[32.5rem] w-[36.25rem]"
-      >
-        <div
+      <div className="absolute w-full h-full z-20 inset-0 flex justify-center items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 360, damping: 40 }}
+          ref={ref}
           style={{
-            transform: "translateZ(50px)",
             transformStyle: "preserve-3d",
+            transform,
           }}
-          className="absolute inset-4 grid place-content-center rounded-[50px] bg-white shadow-lg"
+          className="absolute mx-auto  back   z-20  bg-gradient-to-br from-indigo-500 to-violet-300 rounded-[50px] h-[45rem] w-[55rem]"
         >
-          <p
+          <div
+            className=""
             style={{
-              transform: "translateZ(50px) scale(1.5)",
+              transform: "translateZ(200px)",
+              transformStyle: "preserve-3d",
             }}
-            className="text-center text-2xl font-bold  relative"
+          ></div>
+          <div
+            style={{
+              transform: "translateZ(80px)",
+              transformStyle: "preserve-3d",
+            }}
+            className="absolute inset-4  place-content-center rounded-[50px] z-10 bg-black shadow-lg flex justify-center items-center w-full h-full overflow-hidden"
           >
-            HOVER ME
-          </p>
-        </div>
-      </motion.div>
+            <div className="relative z-0 w-full h-full">
+              <video
+                autoPlay
+                playsInline
+                loop
+                muted
+                src="/video.mp4"
+                className="object-cover w-full h-full grayscale-[50%] sepia-[50%]"
+              ></video>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     );
   }
 );

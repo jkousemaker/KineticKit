@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { AnimatedCursor } from "@/components/wrappers/Animated-Cursor";
 
 import "./globals.css";
 
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "KineticKit",
@@ -18,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <AnimatedCursor />
+
+        {children}
+      </body>
     </html>
   );
 }

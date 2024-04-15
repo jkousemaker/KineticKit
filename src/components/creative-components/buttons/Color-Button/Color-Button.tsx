@@ -57,7 +57,7 @@ const ColorButton = React.forwardRef<
     <Button
       className={cn(
         colorButtonVariants({ variant, size, className }),
-        " w-48 h-20 group !bg-transparent p-0 !border-none !shadow-none "
+        " w-48 h-20 group !bg-transparent p-0 !border-none !shadow-none interactable"
       )}
     >
       <div className="relative h-[inherit] w-[inherit] transition-transform duration-[1.5s] group-hover:scale-[0.94] overflow-hidden rounded-full bg-theme">
@@ -65,7 +65,7 @@ const ColorButton = React.forwardRef<
         <span className="bg-red-800 absolute rounded-t-full group-hover:rounded-t-[60%]   translate-y-full group-hover:translate-y-4 w-[120%] h-[200%] left-1/2 -translate-x-1/2 bottom-0 group-hover:[transition:_transform_1s_cubic-bezier(0.19,_1,_0.22,_1)_300ms,_border-radius_0.2s_cubic-bezier(0.19,_1,_0.22,_1)_470ms] z-20"></span>
         <span className="bg-theme absolute rounded-t-full group-hover:rounded-t-[60%]   translate-y-full group-hover:translate-y-4 w-[120%] h-[200%] left-1/2 -translate-x-1/2 bottom-0 group-hover:[transition:_transform_1s_cubic-bezier(0.19,_1,_0.22,_1)_480ms,_border-radius_0.2s_cubic-bezier(0.19,_1,_0.22,_1)_670ms] z-30 "></span>
       </div>
-      <motion.span className="absolute flex items-center justify-center inset-0 m-auto z-50 text-lg group-hover:!-translate-y-[33%] group-hover:!opacity-0 transition-none group-hover:transition-all !duration-1000 !ease-custom ">
+      <motion.span className="relative flex items-center justify-center inset-0 m-auto z-50 text-lg group-hover:!-translate-y-[33%] group-hover:!opacity-0 transition-none group-hover:transition-all !duration-1000 !ease-custom ">
         {children}
       </motion.span>
       <motion.span className="absolute flex items-center justify-center inset-0 m-auto z-50 text-lg translate-y-[33%] opacity-0 group-hover:!opacity-100 group-hover:!translate-y-0 transition-none group-hover:transition-all !duration-1000 !ease-custom">

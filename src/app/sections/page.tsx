@@ -18,7 +18,11 @@ export default function SectionsPage() {
       <NeumorphHeader mode="dark">Sections</NeumorphHeader>
       <div className=" flex-row flex-wrap gap-5 bg-[#141414] pt-20 p-5 grid grid-cols-3 items-center justify-center">
         {sections.map((section, i) => (
-          <InformationCard key={i} href={section.href} className="mx-auto">
+          <InformationCard
+            key={i}
+            href={section.href}
+            className="mx-auto interactable"
+          >
             <div className="rounded-2xl pt-[133.33%] z-0 w-full relative overflow-hidden">
               <InformationCardPopup
                 stack={section.stack}
