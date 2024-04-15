@@ -50,7 +50,7 @@ export default function CardHeroPage({}) {
   };
 
   return (
-    <main className="h-screen interactable">
+    <main className="h-screen ">
       <div
         onMouseMove={handleMouseMove}
         style={{ perspective: "5000px" }}
