@@ -1,4 +1,5 @@
 export const creativeComponents = [
+  { title: "Steps", href: "/blog/creative-components/steps" },
   { title: "Magnified Dock", href: "/blog/creative-components/magnified-dock" },
   { title: "Dot Tabs", href: "/blog/creative-components/dot-tabs" },
   { title: "Stretchy Tabs", href: "/blog/creative-components/stretchy-tabs" },
