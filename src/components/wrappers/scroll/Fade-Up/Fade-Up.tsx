@@ -1,6 +1,11 @@
 "use client";
 import * as React from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 
 interface fadeUpProps {
   children: React.ReactNode;
@@ -8,7 +13,7 @@ interface fadeUpProps {
   yStart?: number | string;
   yOffsets?: { scroll: [number, number]; value: [number, number] };
   axis?: "x" | "y";
-  offsets?: { start: string; end: string };
+  offsets?: any;
 }
 
 const FadeUp: React.FC<fadeUpProps> = ({
