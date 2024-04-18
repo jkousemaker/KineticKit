@@ -14,7 +14,7 @@ interface useCursorStoreProps {
 }
 
 const useCursorStore = create<useCursorStoreProps>((set) => ({
-  state: true,
+  state: false,
   variant: "Default",
   size: 20,
   color: "#fff",

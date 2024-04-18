@@ -21,7 +21,7 @@ export default function ScaleUpPage() {
         <div className="border-y-2 w-full" key={key}>
           <ScaleUp>
             <div className="w-full flex flex-row">
-              <div className="h-60 w-40 bg-blue-500"></div>
+              <div className="h-32 w-20 bg-blue-500"></div>
               <h2 className="text-7xl">Hey</h2>
             </div>
           </ScaleUp>
