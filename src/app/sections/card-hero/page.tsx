@@ -13,10 +13,14 @@ import { ScaleUp } from "@/components/wrappers/Scale-Up";
 import { FadeIn } from "@/components/wrappers/Fade-In";
 import { CtaButton } from "@/components/creative-components/buttons/Cta-Button/Cta-Button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
+import { useCursorStore } from "@/stores/cursorStore";
 const ROTATION_RANGE = 20.5;
 const HALF_ROTATION_RANGE = 20.5 / 2;
 
 export default function CardHeroPage({}) {
+  const updateState = useCursorStore((state) => state.updateState);
+  const updateColor = useCursorStore((state) => state.updateColor);
+  const updateMargin = useCursorStore((state) => state.updateMargin);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   let bgX = useSpring(0, { stiffness: 1800, damping: 150, velocity: 1 });
@@ -43,8 +47,7 @@ export default function CardHeroPage({}) {
 
     const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
     const rY = mouseX / width - HALF_ROTATION_RANGE;
-    console.log(width, height);
-    console.log(rX, rY, mouseX, mouseY, width, height);
+
     x.set(rX);
     y.set(rY);
   };
@@ -56,7 +59,15 @@ export default function CardHeroPage({}) {
         style={{ perspective: "5000px" }}
         className="z-20 grid w-full place-content-center bg-gradient-to-br from-indigo-500/20 to-violet-500/20 px-4 py-12 text-slate-900 h-screen absolute inset-0"
       >
-        <h2 className="text-[11rem] lowercase text-white text-center  -tracking-[0.08em] relative z-50 font-semibold">
+        <h2
+          onMouseEnter={() => {
+            updateState(true);
+            updateColor("#fff");
+            updateMargin({ top: -50, left: -50 });
+          }}
+          onMouseLeave={() => updateState(false)}
+          className="text-[11rem] lowercase text-white text-center  -tracking-[0.08em] relative z-50 font-semibold"
+        >
           <span className="block -ml-[.5rem] leading-[0.3]">
             <ScaleUp>
               <BubbleLetters>conversion </BubbleLetters>

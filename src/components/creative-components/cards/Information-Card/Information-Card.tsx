@@ -8,10 +8,14 @@ const InformationCard = ({
   href,
   className,
   children,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   href: string;
   className?: string;
   children: React.ReactNode;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) => {
   return (
     <motion.div
@@ -23,6 +27,8 @@ const InformationCard = ({
         "z-[1] cursor-pointer flex flex-col relative w-[350px] ",
         className
       )}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <Link
         href={href}

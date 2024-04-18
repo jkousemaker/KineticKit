@@ -7,23 +7,21 @@ import {
   useSpring,
   useTransform,
   useVelocity,
+  AnimatePresence,
 } from "framer-motion";
+import { useCursorStore } from "@/stores/cursorStore";
 
 const AnimatedCursor = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
+  const state = useCursorStore((state) => state.state);
+  const size = useCursorStore((state) => state.size);
+  const color = useCursorStore((state) => state.color);
+  const margin = useCursorStore((state) => state.margin);
   const cursor = useRef(null);
-  const cursorSize = isHovered ? 190 : 40;
 
   const mouse = {
     x: useMotionValue(0),
     y: useMotionValue(0),
   };
-
-  const xVelocity = useVelocity(mouse.x);
-  useMotionValueEvent(xVelocity, "change", (latest) => {
-    console.log(latest);
-  });
 
   //Smooth out the mouse values
   const smoothOptions = {
@@ -41,16 +39,17 @@ const AnimatedCursor = () => {
     //Update the parameter type to MouseEvent
     const { clientX, clientY } = e;
 
-    mouse.x.set(clientX - cursorSize / 2);
-    mouse.y.set(clientY - cursorSize / 2);
+    mouse.x.set(clientX + margin.left - size / 2);
+    mouse.y.set(clientY + margin.top - size / 2);
   };
 
   useEffect(() => {
+    console.log(state);
     window.addEventListener("mousemove", manageMouseMove);
     return () => {
       window.removeEventListener("mousemove", manageMouseMove);
     };
-  }, [isHovered]);
+  }, [state]);
 
   return (
     <div>
@@ -58,23 +57,21 @@ const AnimatedCursor = () => {
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,
-          // Remove the 'interactable' property
-          // interactable,
+          backgroundColor: color,
+          width: size,
+          height: size,
         }}
         initial={{ opacity: 0, scale: 0 }}
         animate={{
-          width: cursorSize,
-          height: cursorSize,
-          opacity: 1,
+          opacity: state ? 1 : 0,
           scale: 1,
+
           transition: {
-            duration: 2,
-            delay: 5,
             left: { duration: 0.5 },
             top: { duration: 0.5 },
           },
         }}
-        className="fixed h-10 w-10 bg-black top-0 z-[99999999999] pointer-events-none rounded-full"
+        className="fixed h-10 w-10 top-0 z-[99999999999] pointer-events-none rounded-full text-white"
         ref={cursor}
       ></motion.div>
     </div>
