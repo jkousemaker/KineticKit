@@ -160,11 +160,8 @@ const SpotlightBackground = React.forwardRef<HTMLDivElement>(({}, ref) => {
         className="absolute inset-0 w-full h-full mix-blend-difference   z-0 pointer-events-none"
         style={{
           background: useMotionTemplate`
-            radial-gradient(
-              550px circle at ${bgX}px ${bgY}px,
-              rgba(160, 53, 255, 0.50),
-              transparent 100%
-            )
+          radial-gradient(circle at ${bgX}px ${bgY}px,#706ab6 15%,#000 70%)
+            
           `,
         }}
       ></motion.div>

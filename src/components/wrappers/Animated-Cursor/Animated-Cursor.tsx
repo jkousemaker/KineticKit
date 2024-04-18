@@ -101,7 +101,7 @@ const AnimatedCursor = () => {
             top: { duration: 0.5 },
           },
         }}
-        className="fixed h-10 w-10 top-0 z-[99999999999] pointer-events-none rounded-full text-white flex items-center justify-center"
+        className="fixed h-10 w-10 top-0 z-[99999999999] pointer-events-none rounded-full mix-blend-difference flex items-center justify-center"
         ref={cursor}
       >
         <AnimatePresence>
