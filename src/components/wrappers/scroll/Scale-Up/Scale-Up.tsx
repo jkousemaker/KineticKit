@@ -29,7 +29,7 @@ interface scaleUpProps {
     | "top center"
     | "bottom center";
   axis?: "x" | "y";
-  offsets?: { start: string; end: string };
+  offsets?: any;
 }
 
 const ScaleUp: React.FC<scaleUpProps> = ({
