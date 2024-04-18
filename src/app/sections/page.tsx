@@ -12,15 +12,10 @@ import {
 import { useCursorStore } from "@/stores/cursorStore";
 import type { useCursorStoreProps } from "@/stores/cursorStore";
 export default function SectionsPage() {
-  const updateState = useCursorStore(
-    (state: useCursorStoreProps) => state.updateState
+  const updateVariant = useCursorStore(
+    (state: useCursorStoreProps) => state.updateVariant
   );
-  const updateColor = useCursorStore(
-    (state: useCursorStoreProps) => state.updateColor
-  );
-  const updateMargin = useCursorStore(
-    (state: useCursorStoreProps) => state.updateMargin
-  );
+
   return (
     <main className="">
       <NeumorphHeader mode="dark">Sections</NeumorphHeader>
@@ -28,12 +23,10 @@ export default function SectionsPage() {
         {sections.map((section, i) => (
           <InformationCard
             onMouseEnter={() => {
-              updateState(true);
-              updateColor("#fff");
-              updateMargin({ top: -50, left: -50 });
+              updateVariant("Link");
             }}
             onMouseLeave={() => {
-              updateState(false);
+              updateVariant("Default");
             }}
             key={i}
             href={section.href}

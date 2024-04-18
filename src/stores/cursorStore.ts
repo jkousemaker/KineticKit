@@ -2,22 +2,27 @@ import { create } from "zustand";
 
 interface useCursorStoreProps {
   state: boolean;
+  variant: "Default" | "Link" | "Hover";
   size: number;
   color: string;
   margin: { top: number; left: number };
   updateState: (newState: boolean) => void;
+  updateVariant: (newVariant: "Default" | "Link" | "Hover") => void;
   updateSize: (newSize: number) => void;
   updateColor: (newColor: string) => void;
   updateMargin: (newMargin: { top: number; left: number }) => void;
 }
 
 const useCursorStore = create<useCursorStoreProps>((set) => ({
-  state: false,
-  size: 40,
-  color: "#000",
-  margin: { top: 0, left: 0 },
+  state: true,
+  variant: "Default",
+  size: 20,
+  color: "#fff",
+  margin: { top: -10, left: -10 },
 
   updateState: (newState: boolean) => set({ state: newState }),
+  updateVariant: (newVariant: "Default" | "Link" | "Hover") =>
+    set({ variant: newVariant }),
   updateSize: (newSize: number) => set({ size: newSize }),
   updateColor: (newColor: string) => set({ color: newColor }),
   updateMargin: (newMargin: { top: number; left: number }) =>

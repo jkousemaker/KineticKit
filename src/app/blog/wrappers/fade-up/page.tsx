@@ -1,10 +1,10 @@
 "use client";
 import { PageHeader } from "@/components/elements/Page-Header/Page-Header";
 import { Tabs } from "@/components/elements/Tabs/Tabs";
-import { ScaleUp } from "@/components/wrappers/scroll/Scale-Up";
+import { FadeUp } from "@/components/wrappers/scroll/Fade-Up";
 import { useState } from "react";
 import { DotButton } from "@/components/creative-components/buttons/Dot-Button";
-export default function ScaleUpPage() {
+export default function FadeUpPage() {
   const [key, setKey] = useState(0);
   const codeString = `console.log("Hey")`;
   return (
@@ -18,13 +18,10 @@ export default function ScaleUpPage() {
         </div>
 
         <div className="h-screen"></div>
-        <div className="border-y-2 w-full" key={key}>
-          <ScaleUp>
-            <div className="w-full flex flex-row">
-              <div className="h-60 w-40 bg-blue-500"></div>
-              <h2 className="text-7xl">Hey</h2>
-            </div>
-          </ScaleUp>
+        <div className="border-y-2" key={key}>
+          <FadeUp yStart={-100}>
+            <h2 className="text-7xl">Hey</h2>
+          </FadeUp>
         </div>
         <div className="h-screen"></div>
       </Tabs>

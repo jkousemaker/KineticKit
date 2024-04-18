@@ -2,14 +2,14 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
-interface scaleUpProps {
+interface scaleInProps {
   children: React.ReactNode;
   scale?: number;
   duration?: number;
   delay?: number;
 }
 
-const ScaleUp: React.FC<scaleUpProps> = ({
+const ScaleIn: React.FC<scaleInProps> = ({
   children,
   scale = 0.5,
   duration = 2,
@@ -27,4 +27,4 @@ const ScaleUp: React.FC<scaleUpProps> = ({
   );
 };
 
-export { ScaleUp };
+export { ScaleIn };

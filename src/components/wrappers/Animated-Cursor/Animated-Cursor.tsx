@@ -11,10 +11,29 @@ import {
 } from "framer-motion";
 import { useCursorStore } from "@/stores/cursorStore";
 import type { useCursorStoreProps } from "@/stores/cursorStore";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+const variants = {
+  Default: {
+    scale: 1,
+    opacity: 1,
+  },
+  Link: {
+    scale: 1.5,
+    opacity: 0.5,
+  },
+  Hover: {
+    scale: 1.5,
+    opacity: 0.5,
+  },
+};
+
 const AnimatedCursor = () => {
   const state = useCursorStore((state: useCursorStoreProps) => state.state);
-  const size = useCursorStore((state: useCursorStoreProps) => state.size);
-  const color = useCursorStore((state: useCursorStoreProps) => state.color);
+  const variant = useCursorStore((state: useCursorStoreProps) => state.variant);
+  const [size, setSize] = useState(20);
+  const color = "#fff";
+  //const size = useCursorStore((state: useCursorStoreProps) => state.size);
+  //const color = useCursorStore((state: useCursorStoreProps) => state.color);
   const margin = useCursorStore((state: useCursorStoreProps) => state.margin);
   const cursor = useRef(null);
 
@@ -44,12 +63,24 @@ const AnimatedCursor = () => {
   };
 
   useEffect(() => {
-    console.log(state);
+    if (variant) {
+      switch (variant) {
+        case "Default":
+          setSize(20);
+          break;
+        case "Link":
+          setSize(60);
+          break;
+        case "Hover":
+          setSize(40);
+          break;
+      }
+    }
     window.addEventListener("mousemove", manageMouseMove);
     return () => {
       window.removeEventListener("mousemove", manageMouseMove);
     };
-  }, [state]);
+  }, [variant, size]);
 
   return (
     <div>
@@ -58,22 +89,33 @@ const AnimatedCursor = () => {
           left: smoothMouse.x,
           top: smoothMouse.y,
           backgroundColor: color,
-          width: size,
-          height: size,
         }}
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: state ? 1 : 0,
           scale: 1,
-
+          width: size,
+          height: size,
           transition: {
             left: { duration: 0.5 },
             top: { duration: 0.5 },
           },
         }}
-        className="fixed h-10 w-10 top-0 z-[99999999999] pointer-events-none rounded-full text-white"
+        className="fixed h-10 w-10 top-0 z-[99999999999] pointer-events-none rounded-full text-white flex items-center justify-center"
         ref={cursor}
-      ></motion.div>
+      >
+        <AnimatePresence>
+          {variant == "Link" && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <ArrowRightIcon className="w-5 h-5 text-black" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

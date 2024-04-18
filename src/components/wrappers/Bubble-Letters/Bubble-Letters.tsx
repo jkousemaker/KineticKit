@@ -15,10 +15,12 @@ const BubbleLetters = ({
       {children.split("").map((child, idx) => (
         <motion.span
           className="inline-block relative cursor-default origin-bottom"
+          style={{
+            color: "#fff",
+          }}
           whileHover={{
             fontWeight: weight,
             scale: 1.05,
-            color: "white",
             paddingInline: "0.2rem",
           }}
           key={idx}

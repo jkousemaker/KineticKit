@@ -16,8 +16,6 @@ const starters = [
 ];
 import { usePathname } from "next/navigation";
 export default function Aside() {
-  const pathname = usePathname();
-  console.log(pathname);
   return (
     <aside>
       <div className="relative overflow-hidden h-full py-6 pr-6 lg:py-8">
@@ -66,7 +64,7 @@ const Section = ({
   toggleable?: Boolean;
 }) => {
   const [open, setOpen] = useState(false);
-
+  const pathname = usePathname();
   return (
     <div>
       <div className=" mb-1">
@@ -90,7 +88,7 @@ const Section = ({
         }}
         transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
         className={cn(
-          "mx-2 border-l overflow-hidden",
+          "mx-2 border-l",
           !open && toggleable && "pointer-events-none"
         )}
       >
@@ -101,8 +99,16 @@ const Section = ({
               asChild
               className="text-start w-full justify-start  py-1 px-2 group"
             >
-              <Link href={link.href}>
-                <span className="block text-[#71717a] group-hover:translate-x-1 group-hover:text-theme-light transition-all duration-200">
+              <Link
+                href={link.href}
+                className={cn(link.href === pathname && "underline")}
+              >
+                <span
+                  className={cn(
+                    "block  group-hover:translate-x-1 group-hover:text-theme-light transition-all duration-200",
+                    link.href === pathname ? "text-theme" : "text-[#71717a]"
+                  )}
+                >
                   {link.title}
                 </span>
               </Link>

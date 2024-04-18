@@ -1,10 +1,10 @@
 "use client";
 import { PageHeader } from "@/components/elements/Page-Header/Page-Header";
 import { Tabs } from "@/components/elements/Tabs/Tabs";
-import { ScaleUp } from "@/components/wrappers/scroll/Scale-Up";
+import { ScaleUp } from "@/components/wrappers/Scale-Up";
 import { useState } from "react";
 import { DotButton } from "@/components/creative-components/buttons/Dot-Button";
-export default function ScaleUpPage() {
+export default function ScaleInPage() {
   const [key, setKey] = useState(0);
   const codeString = `console.log("Hey")`;
   return (
@@ -16,17 +16,14 @@ export default function ScaleUpPage() {
             Reset
           </DotButton>
         </div>
-
-        <div className="h-screen"></div>
-        <div className="border-y-2 w-full" key={key}>
-          <ScaleUp>
-            <div className="w-full flex flex-row">
-              <div className="h-60 w-40 bg-blue-500"></div>
-              <h2 className="text-7xl">Hey</h2>
-            </div>
+        <div className="" key={key}>
+          <ScaleUp duration={0.5}>
+            <PageHeader title="Cool Animation" />
+          </ScaleUp>
+          <ScaleUp delay={0.2} duration={0.5}>
+            <PageHeader title="Delay Cool Animation" />
           </ScaleUp>
         </div>
-        <div className="h-screen"></div>
       </Tabs>
     </main>
   );
