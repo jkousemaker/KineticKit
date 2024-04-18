@@ -10,12 +10,12 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { useCursorStore } from "@/stores/cursorStore";
-
+import type { useCursorStoreProps } from "@/stores/cursorStore";
 const AnimatedCursor = () => {
-  const state = useCursorStore((state) => state.state);
-  const size = useCursorStore((state) => state.size);
-  const color = useCursorStore((state) => state.color);
-  const margin = useCursorStore((state) => state.margin);
+  const state = useCursorStore((state: useCursorStoreProps) => state.state);
+  const size = useCursorStore((state: useCursorStoreProps) => state.size);
+  const color = useCursorStore((state: useCursorStoreProps) => state.color);
+  const margin = useCursorStore((state: useCursorStoreProps) => state.margin);
   const cursor = useRef(null);
 
   const mouse = {

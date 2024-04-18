@@ -10,11 +10,17 @@ import {
   InformationCardBody,
 } from "@/components/creative-components/cards/Information-Card";
 import { useCursorStore } from "@/stores/cursorStore";
-
+import type { useCursorStoreProps } from "@/stores/cursorStore";
 export default function SectionsPage() {
-  const updateState = useCursorStore((state) => state.updateState);
-  const updateColor = useCursorStore((state) => state.updateColor);
-  const updateMargin = useCursorStore((state) => state.updateMargin);
+  const updateState = useCursorStore(
+    (state: useCursorStoreProps) => state.updateState
+  );
+  const updateColor = useCursorStore(
+    (state: useCursorStoreProps) => state.updateColor
+  );
+  const updateMargin = useCursorStore(
+    (state: useCursorStoreProps) => state.updateMargin
+  );
   return (
     <main className="">
       <NeumorphHeader mode="dark">Sections</NeumorphHeader>

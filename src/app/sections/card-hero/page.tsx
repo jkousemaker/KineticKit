@@ -14,13 +14,20 @@ import { FadeIn } from "@/components/wrappers/Fade-In";
 import { CtaButton } from "@/components/creative-components/buttons/Cta-Button/Cta-Button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
 import { useCursorStore } from "@/stores/cursorStore";
+import type { useCursorStoreProps } from "@/stores/cursorStore";
 const ROTATION_RANGE = 20.5;
 const HALF_ROTATION_RANGE = 20.5 / 2;
 
 export default function CardHeroPage({}) {
-  const updateState = useCursorStore((state) => state.updateState);
-  const updateColor = useCursorStore((state) => state.updateColor);
-  const updateMargin = useCursorStore((state) => state.updateMargin);
+  const updateState = useCursorStore(
+    (state: useCursorStoreProps) => state.updateState
+  );
+  const updateColor = useCursorStore(
+    (state: useCursorStoreProps) => state.updateColor
+  );
+  const updateMargin = useCursorStore(
+    (state: useCursorStoreProps) => state.updateMargin
+  );
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   let bgX = useSpring(0, { stiffness: 1800, damping: 150, velocity: 1 });

@@ -1,6 +1,17 @@
 import { create } from "zustand";
 
-const useCursorStore = create((set) => ({
+interface useCursorStoreProps {
+  state: boolean;
+  size: number;
+  color: string;
+  margin: { top: number; left: number };
+  updateState: (newState: boolean) => void;
+  updateSize: (newSize: number) => void;
+  updateColor: (newColor: string) => void;
+  updateMargin: (newMargin: { top: number; left: number }) => void;
+}
+
+const useCursorStore = create<useCursorStoreProps>((set) => ({
   state: false,
   size: 40,
   color: "#000",
@@ -14,3 +25,4 @@ const useCursorStore = create((set) => ({
 }));
 
 export { useCursorStore };
+export type { useCursorStoreProps };
