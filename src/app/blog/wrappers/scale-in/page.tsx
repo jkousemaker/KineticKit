@@ -1,7 +1,7 @@
 "use client";
 import { PageHeader } from "@/components/elements/Page-Header/Page-Header";
 import { Tabs } from "@/components/elements/Tabs/Tabs";
-import { ScaleUp } from "@/components/wrappers/Scale-Up";
+import { ScaleIn } from "@/components/wrappers/Scale-In";
 import { useState } from "react";
 import { DotButton } from "@/components/creative-components/buttons/Dot-Button";
 export default function ScaleInPage() {
@@ -17,12 +17,12 @@ export default function ScaleInPage() {
           </DotButton>
         </div>
         <div className="" key={key}>
-          <ScaleUp duration={0.5}>
+          <ScaleIn duration={0.5}>
             <PageHeader title="Cool Animation" />
-          </ScaleUp>
-          <ScaleUp delay={0.2} duration={0.5}>
+          </ScaleIn>
+          <ScaleIn delay={0.2} duration={0.5}>
             <PageHeader title="Delay Cool Animation" />
-          </ScaleUp>
+          </ScaleIn>
         </div>
       </Tabs>
     </main>
