@@ -8,7 +8,7 @@ import Image, { StaticImageData } from "next/image";
 import image1 from "@public/apple.jpg";
 import image2 from "@public/aurora.webp";
 import { CaretSortIcon } from "@radix-ui/react-icons";
-import { useRef } from "react";
+import React, { useRef } from "react";
 export default function ComparatorPage() {
   const codeString = ``;
   return (
@@ -27,7 +27,7 @@ const Comparator = () => {
   const constraintsRef = useRef(null);
   const controls = useDragControls();
 
-  function startDrag(event) {
+  function startDrag(event: React.PointerEvent<HTMLButtonElement>) {
     controls.start(event);
   }
   return (
