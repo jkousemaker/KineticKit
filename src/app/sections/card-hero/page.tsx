@@ -7,6 +7,8 @@ import {
   useMotionValue,
   useSpring,
   useDragControls,
+  useTime,
+  useTransform,
 } from "framer-motion";
 import { BubbleLetters } from "@/components/wrappers/Bubble-Letters";
 import { ScaleIn } from "@/components/wrappers/Scale-In";
@@ -14,6 +16,8 @@ import { FadeIn } from "@/components/wrappers/Fade-In";
 import { CtaButton } from "@/components/creative-components/buttons/Cta-Button/Cta-Button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
 import { ColorButton } from "@/components/creative-components/buttons/Color-Button";
+import Image from "next/image";
+import noise from "@public/noise.jpg";
 const ROTATION_RANGE = 20.5;
 const HALF_ROTATION_RANGE = 20.5 / 2;
 
@@ -45,7 +49,7 @@ export default function CardHeroPage({}) {
   };
 
   return (
-    <main onMouseMove={handleMouseMove} className="h-screen ">
+    <main onMouseMove={handleMouseMove} className="h-screen">
       <section
         style={{ perspective: "5000px" }}
         className="relative z-20 grid w-full place-content-center  px-4 py-12 h-screen inset-0"
@@ -100,6 +104,7 @@ export default function CardHeroPage({}) {
         </div>
         <Carousal />
       </section>
+      <NoiseTexture />
       <SpotlightBackground />
     </main>
   );
@@ -135,6 +140,20 @@ const Carousal = React.forwardRef<HTMLDivElement>(({}, ref) => {
 
 Carousal.displayName = "Carousal";
 
+const NoiseTexture = React.forwardRef<HTMLDivElement>(({}, ref) => {
+  const time = useTime();
+
+  return (
+    <motion.div
+      style={{}}
+      ref={ref}
+      className="absolute top-1/2 left-1/2 w-[120vw] h-[120vh] overflow-hidden pointer-events-none select-none z-50 bg-[url('/noise.jpg')] bg-repeat bg-center bg-[length:10%] opacity-[0.08]"
+    ></motion.div>
+  );
+});
+
+NoiseTexture.displayName = "NoiseTexture";
+
 const SpotlightBackground = React.forwardRef<HTMLDivElement>(({}, ref) => {
   let bgX = useSpring(0, { stiffness: 350, damping: 100 });
   let bgY = useSpring(0, { stiffness: 350, damping: 100 });
@@ -153,7 +172,7 @@ const SpotlightBackground = React.forwardRef<HTMLDivElement>(({}, ref) => {
     };
   }, []);
   return (
-    <div className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-indigo-500/20 to-violet-500/20">
+    <div className="z-10 fixed inset-0 w-screen h-screen bg-gradient-to-br from-indigo-500/20 to-violet-500/20">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 ? 1 : 0 }}

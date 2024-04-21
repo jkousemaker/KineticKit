@@ -1,14 +1,9 @@
-"use client";
 import { PageHeader } from "@/components/elements/Page-Header/Page-Header";
 import { Tabs } from "@/components/elements/Tabs/Tabs";
-import { motion, useDragControls, useMotionValue } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import image1 from "@public/apple.jpg";
-import image2 from "@public/aurora.webp";
-import { CaretSortIcon } from "@radix-ui/react-icons";
-import React, { useRef } from "react";
+import getBase64 from "../../../../lib/getLocalBase64";
+
 export default function ComparatorPage() {
   const codeString = ``;
   return (
@@ -23,58 +18,30 @@ export default function ComparatorPage() {
   );
 }
 
-const Comparator = () => {
-  const constraintsRef = useRef(null);
-  const controls = useDragControls();
-
-  function startDrag(event: React.PointerEvent<HTMLButtonElement>) {
-    controls.start(event);
-  }
+const Comparator = async () => {
+  const myBlurDataURL = getBase64(
+    "https://images.unsplash.com/photo-1707617961911-889e9ab306bb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  );
+  console.log(myBlurDataURL);
   return (
     <div className="w-full -ml-5">
-      <div ref={constraintsRef} className="relative block">
+      <div className="relative block">
         <figure className="pointer-events-none select-none w-full h-full">
           <picture className="block">
             <Image
-              src={image1}
+              src="https://images.unsplash.com/photo-1707617961911-889e9ab306bb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              //placeholder="blur"
+              //blurDataURL={myBlurDataURL}
+              //fill
               alt="Image"
               className="w-full max-w-full h-auto align-middle"
+              //src="https://images.unsplash.com/photo-1707617961911-889e9ab306bb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              width={1000}
+              height={1000}
+              style={{ width: "100%", height: "100%" }}
             />
           </picture>
         </figure>
-        <motion.div
-          style={{ x: "50%" }}
-          className="absolute top-0 left-0 w-full h-full overflow-hidden"
-        >
-          <motion.figure
-            style={{ x: "-50%" }}
-            className="pointer-events-none select-none w-full h-full"
-          >
-            <picture className="block">
-              <Image
-                src={image2}
-                alt="Image"
-                className="w-full max-w-full h-auto align-middle"
-              />
-            </picture>
-          </motion.figure>
-        </motion.div>
-        <motion.div
-          drag="x"
-          dragControls={controls}
-          dragConstraints={constraintsRef}
-          dragElastic={0}
-          onDrag={(event, info) => console.log(info)}
-          className="absolute left-0 top-[-2.77778vw] bottom-[-2.77778vw] w-[.2rem] ml-[-.1rem] bg-white z-1 flex justify-center items-center"
-        >
-          <Button
-            onPointerDown={startDrag}
-            variant="default"
-            className="p-0 w-10 h-10"
-          >
-            <CaretSortIcon className="w-6 h-6 rotate-90" />
-          </Button>
-        </motion.div>
       </div>
     </div>
   );

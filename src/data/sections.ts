@@ -1,5 +1,23 @@
 export const sections = [
   {
+    title: "SVG Mask Landing Page",
+    description: "A modern landing page with SVG mask effect",
+    href: "/sections/svg-mask-landing",
+    stack: ["Next.js", "framer-motion", "TypeScript", "Tailwind CSS"],
+    badge: "Jusrt started",
+    badgeVariation: "pass",
+    imgSrc: "/screenshots/svg-mask-landing.png",
+  },
+  {
+    title: "Contact",
+    description: "A simple contact page",
+    href: "/sections/contact",
+    stack: ["Next.js"],
+    badge: "Polishing",
+    badgeVariation: "warning",
+    imgSrc: "/screenshots/contact.png",
+  },
+  {
     title: "Card Hero",
     description: "A modern card hero section",
     href: "/sections/card-hero",

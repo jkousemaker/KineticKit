@@ -41,7 +41,7 @@ const NavPill = ({}) => {
   );
 
   return (
-    <div className="w-full fixed top-0 left-0 py-2 px-4 z-50 pointer-events-none">
+    <div className="w-fit fixed top-0 left-0 py-2 px-4 z-50 pointer-events-none">
       <motion.header
         style={{
           height: useTransform(scrollYBoundedProgressDelayed, [0, 1], [80, 50]),
@@ -64,11 +64,7 @@ const NavPill = ({}) => {
               ),
             }}
             className="flex space-x-4 text-sm font-medium text-slate-400"
-          >
-            <a href="#">News</a>
-            <a href="#">Sports</a>
-            <a href="#">Culture</a>
-          </motion.div>
+          ></motion.div>
         </nav>
       </motion.header>
     </div>

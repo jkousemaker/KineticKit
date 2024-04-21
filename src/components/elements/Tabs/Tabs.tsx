@@ -19,8 +19,8 @@ function Tabs({
     <div className="my-4 !relative">
       <TabButtons setTab={setTab} isPreview={isPreview} />
       {isPreview ? (
-        <div className="mt-2 !relative ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2  rounded-md border bg-grid-small-black/[0.1]">
-          <div className="preview !relative flex flex-col min-h-[350px] w-full justify-center p-2 sm:p-10 items-center">
+        <div className="mt-2  !relative ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2  rounded-md border bg-grid-small-black/[0.1]">
+          <div className="preview !relative flex flex-col min-h-[350px] w-full justify-center p-2 sm:p-10 items-center ">
             {children}
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={"overflow-x-clip " + poppins.className}>
         <AnimatedCursor />
 
         {children}
