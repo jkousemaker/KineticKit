@@ -17,6 +17,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",
+    "@studio-freight/react-lenis": "^0.0.47",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "fast-blurhash": "^1.1.2",

@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, Variant } from "framer-motion";
 import Image from "next/image";
 const container = {
   show: {
@@ -93,7 +93,7 @@ const ImageBlock = ({
   className?: string;
   posX?: number;
   posY?: number;
-  variants: { title: string }[];
+  variants?: { hidden: Variant; visible: Variant; exit: Variant };
   id: string;
 }) => {
   return (

@@ -9,7 +9,6 @@ const EmployeeAvatars = ({
     name: string;
     designation: string;
     image: string;
-    blurDataURL: string;
   }[];
 }): React.ReactElement | null => {
   return (
@@ -29,7 +28,6 @@ const Party = async ({
     name: string;
     designation: string;
     image: string;
-    blurDataURL: string;
   };
 }) => {
   const myBlurDataUrl = await getBase64(item.image);
