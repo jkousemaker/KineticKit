@@ -11,10 +11,8 @@ import { useRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import * as React from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+
 export default function StickySectionsPage({}: {}) {
-  const searchParams = useSearchParams();
-  const activeVariant = searchParams.get("variants");
   const firstContainerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: firstContainerRef,
