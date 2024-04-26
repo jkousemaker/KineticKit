@@ -6,12 +6,11 @@ import {
   useAnimate,
   useMotionTemplate,
   useScroll,
-  useTransform,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SectionMask from "./Section-Mask";
 import Image from "next/image";
-import getBase64 from "@/lib/getLocalBase64";
+
 export default function HeroMask({ children }: { children: React.ReactNode }) {
   const [finishedAnimation, setFinishedAnimation] = useState(false);
   const [blurDataURL, setBlurDataURL] = useState<string | undefined>(undefined);
@@ -19,22 +18,22 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
   const firstSequence: AnimationSequence = [
     [
       "#rect-1",
-      { attrY: "50%" },
+      { y: "50%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
       "#rect-2",
-      { attrX: "5%", attrY: "20%" },
+      { x: "5%", y: "20%" },
       { duration: 1.5, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
       "#rect-3",
-      { attrX: "35%", attrY: "65%" },
+      { x: "35%", y: "65%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
       "#rect-4",
-      { attrX: "74%", attrY: "15%" },
+      { x: "74%", y: "15%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
   ];
@@ -42,29 +41,29 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
   const secondSequence: AnimationSequence = [
     [
       "#rect-1",
-      { height: "25vw", width: "35vw", attrX: "0%", attrY: "0%" },
+      { height: "25vw", width: "35vw", x: "0%", y: "0%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
       "#rect-2",
-      { height: "25vw", width: "10vw", attrX: "10%", attrY: "50%" },
+      { height: "25vw", width: "10vw", x: "10%", y: "50%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
       "#rect-3",
-      { attrX: "75%", attrY: "70%" },
+      { x: "75%", y: "70%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
       "#rect-4",
-      { height: "40vw", width: "55vw", attrX: "40%", attrY: "10%" },
+      { height: "40vw", width: "55vw", x: "40%", y: "10%" },
       { duration: 2, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
   ];
   const thirdSequence: AnimationSequence = [
     [
       "#rect-1",
-      { height: "25vw", width: "25vw", attrX: "10%", attrY: "10%" },
+      { height: "25vw", width: "25vw", x: "10%", y: "10%" },
       { duration: 1, at: 0, ease: [0.65, 0.05, 0.36, 1] },
     ],
     [
@@ -72,8 +71,8 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
       {
         height: "15vw",
         width: "15vw",
-        attrX: "70%",
-        attrY: "50%",
+        x: "70%",
+        y: "50%",
         ry: "100%",
         rx: "100%",
       },
@@ -121,8 +120,8 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
             <clipPath id="cut-bottom">
               <motion.rect
                 initial={{
-                  attrX: "10%",
-                  attrY: "10%",
+                  x: "10%",
+                  y: "10%",
                   width: "10vw",
                   height: "0vw",
                 }}
@@ -136,8 +135,8 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
               />
               <motion.rect
                 initial={{
-                  attrX: "35%",
-                  attrY: "20%",
+                  x: "35%",
+                  y: "20%",
                   width: "0vw",
                   height: "10vw",
                 }}
@@ -151,8 +150,8 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
               />
               <motion.rect
                 initial={{
-                  attrX: "25%",
-                  attrY: "65%",
+                  x: "25%",
+                  y: "65%",
                   width: "0vw",
                   height: "20vw",
                 }}
@@ -165,8 +164,8 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
               />
               <motion.rect
                 initial={{
-                  attrX: "74%",
-                  attrY: "15%",
+                  x: "74%",
+                  y: "15%",
                   width: "15vw",
                   height: "0vw",
                 }}
