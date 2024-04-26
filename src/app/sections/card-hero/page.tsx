@@ -166,6 +166,7 @@ const SpotlightBackground = React.forwardRef<HTMLDivElement>(({}, ref) => {
   };
 
   useEffect(() => {
+    if (window === undefined) return;
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);

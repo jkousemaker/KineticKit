@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { animate, motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 const images = [
   {
     x: 91,
@@ -93,9 +93,15 @@ const Card = ({
   index: number;
   length: number;
 }) => {
+  const [window, setWindow] = useState({ width: 0, height: 0 });
   const image = useRef(null);
   const height = 200;
   const radius1 = 50 + height / 2;
+  useEffect(() => {
+    if (window) {
+      setWindow({ width: window.innerWidth, height: window.innerHeight });
+    }
+  }, [window]);
   return (
     <motion.div
       initial={{
