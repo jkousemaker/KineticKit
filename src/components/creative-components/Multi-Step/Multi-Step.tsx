@@ -52,12 +52,10 @@ function MultiStep({}) {
         </AnimatePresence>
       </div>
       <div className="flex flex-row justify-between items-center">
-        <DotButton size="sm" onClick={setPrevious} direction="left">
+        <DotButton onClick={setPrevious} direction="left">
           Previous
         </DotButton>
-        <DotButton size="sm" onClick={setNext}>
-          Next
-        </DotButton>
+        <DotButton onClick={setNext}>Next</DotButton>
       </div>
     </div>
   );
