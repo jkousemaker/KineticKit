@@ -27,7 +27,6 @@ export default function LayoutLoaderPage() {
                 <div className="w-1/2 flex justify-center">
                   <TextStagger
                     text="brand"
-                    el="h1"
                     once
                     className="text-[18rem] text-black font-medium relative tracking-[-.8rem] inline-block whitespace-nowrap leading-none"
                   />
@@ -51,7 +50,6 @@ export default function LayoutLoaderPage() {
                       <TextStagger
                         key={i}
                         text="experience"
-                        el="span"
                         once
                         className="px-[8vw] text-[18rem] text-black font-medium relative tracking-[-.8rem] inline-block whitespace-nowrap leading-none"
                       />
@@ -84,7 +82,6 @@ export default function LayoutLoaderPage() {
                 </motion.div>
                 <TextStagger
                   text="studio"
-                  el="h1"
                   once
                   className="text-[18rem] text-black font-medium relative tracking-[-.8rem] inline-block whitespace-nowrap leading-none"
                 />

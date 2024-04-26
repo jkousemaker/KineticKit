@@ -6,7 +6,6 @@ import { useEffect, useRef } from "react";
 
 type AnimatedTextProps = {
   text: string | string[];
-  el?: keyof JSX.IntrinsicElements;
   className?: string;
   once?: boolean;
   repeatDelay?: number;
@@ -29,7 +28,6 @@ const defaultAnimations = {
 
 export const TextStagger = ({
   text,
-  el: Wrapper = "p",
   className,
   once,
   repeatDelay,
@@ -65,7 +63,7 @@ export const TextStagger = ({
   }, [isInView]);
 
   return (
-    <Wrapper className={cn(className)}>
+    <span className={cn(className)}>
       <span className="sr-only">{textArray.join(" ")}</span>
       <motion.span
         ref={ref}
@@ -99,6 +97,6 @@ export const TextStagger = ({
           </span>
         ))}
       </motion.span>
-    </Wrapper>
+    </span>
   );
 };

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { AnimatedCursor } from "@/components/wrappers/Animated-Cursor";
 
 import "./globals.css";
 
@@ -22,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"overflow-x-clip " + poppins.className}>
-        <AnimatedCursor />
-
-        {children}
-      </body>
+      <body className={"overflow-x-clip " + poppins.className}>{children}</body>
     </html>
   );
 }

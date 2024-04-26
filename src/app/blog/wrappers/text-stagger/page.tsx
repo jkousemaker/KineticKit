@@ -17,7 +17,7 @@ export default function ScaleUpPage() {
           </DotButton>
         </div>
         <div className="" key={key}>
-          <TextStagger>Test</TextStagger>
+          <TextStagger text="Test"></TextStagger>
         </div>
       </Tabs>
     </main>
