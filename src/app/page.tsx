@@ -5,6 +5,7 @@ import Phones from "@public/phones.png";
 import { ImageTilt } from "@/components/creative-components/Image-Tilt";
 import { AnimatedLightning } from "@/components/creative-components/Animated-Lightning";
 import { Nav } from "@/components/layout/Nav";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -35,11 +36,11 @@ export default function HomePage() {
                 </h2>
               </div>
               <div className="relative z-10 group mb-20 flex flex-row gap-10">
-                <DotButton variant="dark" href="/blog" size="pill">
-                  View Blog
+                <DotButton asChild>
+                  <Link href="/blog">View Blog</Link>
                 </DotButton>
-                <DotButton variant="dark" href="/sections" size="pill">
-                  View Sections
+                <DotButton asChild>
+                  <Link href="/sections">View Sections</Link>
                 </DotButton>
               </div>
               <div>

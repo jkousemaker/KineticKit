@@ -1,3 +1,3 @@
-import { DotButton, dotButtonVariants } from "./Dot-Button";
+import { DotButton, dotButtonVariants, DotButtonIcon } from "./Dot-Button";
 
-export { DotButton, dotButtonVariants };
+export { DotButton, dotButtonVariants, DotButtonIcon };
