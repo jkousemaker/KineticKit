@@ -94,9 +94,9 @@ const Card = ({
   scrollYProgress,
 }: {
   image: {
-    zIndex: string;
+    zIndex: number;
     imgSrc: string;
-    transform: { x: string; y: string };
+    transform: { x: number; y: number };
   };
   scrollYProgress: MotionValue;
 }) => {

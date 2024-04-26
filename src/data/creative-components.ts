@@ -1,5 +1,9 @@
 export const creativeComponents = [
   {
+    title: "Text Highlight",
+    href: "/blog/creative-components/text-highlight",
+  },
+  {
     title: "Expanded Header",
     href: "/blog/creative-components/expanded-header",
   },

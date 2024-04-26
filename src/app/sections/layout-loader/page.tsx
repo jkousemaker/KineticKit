@@ -21,6 +21,7 @@ export default function LayoutLoaderPage() {
             transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
             layoutId="main-image-1"
             src="/apple.jpg"
+            className="w-full h-full object-cover"
           />
         </div>
       )}

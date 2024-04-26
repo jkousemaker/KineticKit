@@ -63,11 +63,12 @@ const StickyAppleBanner = ({}) => {
     offset: ["end end", "end start"],
   });
   const width = useTransform(scrollYProgress, [0, 1], ["100%", "85%"]);
+
   return (
     <div ref={container} className="absolute top-0 z-10 inset-0 w-full h-full">
       <motion.div
         style={{ width }}
-        className="sticky top-0 w-full h-screen mx-auto"
+        className="sticky top-0 w-full h-screen mx-auto overflow-hidden"
       >
         <Image src={Apple} alt="apple" fill className="object-cover" />
       </motion.div>

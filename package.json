@@ -15,10 +15,13 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
+    "@react-three/drei": "^9.105.4",
+    "@react-three/fiber": "^8.16.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "fast-blurhash": "^1.1.2",
     "framer-motion": "^11.0.25",
+    "leva": "^0.9.35",
     "next": "14.1.4",
     "plaiceholder": "^3.0.0",
     "react": "^18",
@@ -27,6 +30,7 @@
     "sharp": "^0.33.3",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.164.0",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
