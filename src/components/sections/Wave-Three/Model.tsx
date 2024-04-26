@@ -11,7 +11,7 @@ export default function Model({
 }: {
   scrollProgress: MotionValue;
 }) {
-  const image = useRef(null);
+  const image = useRef<THREE.Mesh>(null);
   const texture = useTexture("/apple.jpg");
   const { width, height } = texture.image;
   const { viewport } = useThree();
@@ -31,6 +31,7 @@ export default function Model({
   });
 
   useFrame(() => {
+    if (!image.current) return;
     //scale image based on progress of the scroll
     const scaleX = transform(
       scrollProgress.get(),
@@ -49,10 +50,8 @@ export default function Model({
     const scaleRatio = scaleX / scaleY;
     const aspectRatio = width / height;
     //scale texture inside shader
-    image.current.material.uniforms.vUvScale.value.set(
-      1,
-      aspectRatio / scaleRatio,
-    );
+    const material = image.current.material as THREE.ShaderMaterial;
+    material.uniforms.vUvScale.value.set(1, aspectRatio / scaleRatio);
 
     //animate wave based on progress of the scroll
     const modifiedAmplitude = transform(
@@ -61,9 +60,9 @@ export default function Model({
       [amplitude, 0],
     );
 
-    image.current.material.uniforms.uTime.value += 0.04;
-    image.current.material.uniforms.uAmplitude.value = modifiedAmplitude;
-    image.current.material.uniforms.uWaveLength.value = waveLength;
+    material.uniforms.uTime.value += 0.04;
+    material.uniforms.uAmplitude.value = modifiedAmplitude;
+    material.uniforms.uWaveLength.value = waveLength;
   });
 
   return (
