@@ -93,7 +93,7 @@ const ImageBlock = ({
   className?: string;
   posX?: number;
   posY?: number;
-  variants?: { hidden: Variant; visible: Variant; exit: Variant };
+  variants?: any;
   id: string;
 }) => {
   return (
