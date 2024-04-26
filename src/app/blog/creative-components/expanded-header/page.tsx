@@ -67,7 +67,7 @@ const Header = () => {
       onMouseLeave={() => setMenuOpen(false)}
       className={cn(
         "sticky top-10 w-full bg-blue-500   z-50 flex flex-row justify-between pt-10 px-20 pointer-events-none",
-        !scrolled && "mix-blend-difference"
+        !scrolled && "mix-blend-difference",
       )}
     >
       <div className="">

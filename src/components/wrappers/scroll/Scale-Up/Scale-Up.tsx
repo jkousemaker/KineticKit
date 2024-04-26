@@ -50,12 +50,12 @@ const ScaleUp: React.FC<scaleUpProps> = ({
   const opacity = useTransform(
     scrollYProgress,
     opacityOffsets.scroll,
-    opacityOffsets.value
+    opacityOffsets.value,
   );
   const scale = useTransform(
     scrollYProgress,
     scaleOffsets.scroll,
-    scaleOffsets.value
+    scaleOffsets.value,
   );
 
   return (

@@ -22,7 +22,7 @@ const ctaButtonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface CtaButtonProps
@@ -106,7 +106,7 @@ const CtaButton = React.forwardRef<HTMLButtonElement, CtaButtonProps>(
         </motion.span>
       </Component>
     );
-  }
+  },
 );
 
 CtaButton.displayName = "CtaButton";

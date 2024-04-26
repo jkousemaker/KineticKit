@@ -50,8 +50,8 @@ const DotTab = ({
     hoveredTab === tab.id
       ? true
       : activeTab === tab.id && hoveredTab == null
-      ? true
-      : false;
+        ? true
+        : false;
   return (
     <li
       className="relative flex justify-center"
@@ -65,7 +65,7 @@ const DotTab = ({
         href="#"
         className={cn(
           "py-4 px-5 transition-color duration-300 ease-linear hover:text-active",
-          tab.id === activeTab && "text-active"
+          tab.id === activeTab && "text-active",
         )}
       >
         <span>{tab.title}</span>

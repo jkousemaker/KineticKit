@@ -101,7 +101,7 @@ const ImageBlock = ({
       variants={variants}
       className={cn(
         "absolute origin-center flex justify-center items-center",
-        className
+        className,
       )}
     >
       <Image src={`/apple.jpg`} fill alt={id} />

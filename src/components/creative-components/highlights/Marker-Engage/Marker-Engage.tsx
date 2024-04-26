@@ -22,7 +22,7 @@ const markerEngageVariants = cva(
       variant: "default",
       origin: "default",
     },
-  }
+  },
 );
 
 export interface MarkerEngageProps
@@ -37,7 +37,7 @@ export interface MarkerEngageProps
 const MarkerEngage = React.forwardRef<HTMLElement, MarkerEngageProps>(
   (
     { className, children, once = true, margin = "-100px", variant, origin },
-    ref
+    ref,
   ) => {
     const letters = children.split("") as string[];
     return (
@@ -74,7 +74,7 @@ const MarkerEngage = React.forwardRef<HTMLElement, MarkerEngageProps>(
         <Background letters={letters} variant={variant} origin={origin} />
       </motion.mark>
     );
-  }
+  },
 );
 
 const backgroundVariants = cva("absolute inset-0 w-full h-full z-10", {
@@ -124,7 +124,7 @@ const Background = ({
           variant: variant as any,
           origin: origin as any,
           className,
-        })
+        }),
       )}
     ></motion.span>
   );

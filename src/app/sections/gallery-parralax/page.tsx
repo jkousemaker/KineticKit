@@ -111,7 +111,7 @@ const Column = ({
       style={{ y }}
       className={cn(
         "relative h-full w-1/4 min-w-60 flex flex-col gap-[2vw] whitespace-nowrap",
-        className
+        className,
       )}
     >
       {images.map((image, index) => (

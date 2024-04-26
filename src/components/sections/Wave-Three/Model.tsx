@@ -35,12 +35,12 @@ export default function Model({
     const scaleX = transform(
       scrollProgress.get(),
       [0, 1],
-      [scale[0], viewport.width]
+      [scale[0], viewport.width],
     );
     const scaleY = transform(
       scrollProgress.get(),
       [0, 1],
-      [scale[1], viewport.height]
+      [scale[1], viewport.height],
     );
     image.current.scale.x = scaleX;
     image.current.scale.y = scaleY;
@@ -51,14 +51,14 @@ export default function Model({
     //scale texture inside shader
     image.current.material.uniforms.vUvScale.value.set(
       1,
-      aspectRatio / scaleRatio
+      aspectRatio / scaleRatio,
     );
 
     //animate wave based on progress of the scroll
     const modifiedAmplitude = transform(
       scrollProgress.get(),
       [0, 1],
-      [amplitude, 0]
+      [amplitude, 0],
     );
 
     image.current.material.uniforms.uTime.value += 0.04;

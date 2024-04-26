@@ -22,7 +22,7 @@ const glassButtonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface GlassButtonProps
@@ -46,7 +46,7 @@ const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
         </Component>
       </div>
     );
-  }
+  },
 );
 
 GlassButton.displayName = "GlassButton";
@@ -67,7 +67,7 @@ const glassButtonShadowVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface GlassButtonShadowProps

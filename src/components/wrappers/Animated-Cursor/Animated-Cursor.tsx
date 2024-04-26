@@ -25,6 +25,10 @@ const variants = {
     scale: 1.5,
     opacity: 0.5,
   },
+  Custom: {
+    scale: 2,
+    opacity: 0.5,
+  },
 };
 
 const AnimatedCursor = () => {
@@ -44,9 +48,9 @@ const AnimatedCursor = () => {
 
   //Smooth out the mouse values
   const smoothOptions = {
-    damping: 20,
-    stiffness: 300,
-    mass: 0.5,
+    damping: 50,
+    stiffness: 500,
+    mass: 0.8,
     //velocity: 1.5,
   };
   const smoothMouse = {
@@ -66,13 +70,16 @@ const AnimatedCursor = () => {
     if (variant) {
       switch (variant) {
         case "Default":
-          setSize(20);
+          setSize(10);
           break;
         case "Link":
           setSize(60);
           break;
         case "Hover":
           setSize(40);
+          break;
+        case "Custom":
+          setSize(80);
           break;
       }
     }

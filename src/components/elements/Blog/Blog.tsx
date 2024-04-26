@@ -26,7 +26,7 @@ const BlogHeader = ({
     <h2
       className={cn(
         "font-heading mt-12 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight first:mt-0 text-black",
-        classNames
+        classNames,
       )}
     >
       {title}

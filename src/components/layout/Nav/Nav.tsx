@@ -37,7 +37,7 @@ const Nav = ({}) => {
         "z-50 sticky top-0 h-16 w-full flex items-center border-b",
         active
           ? "bg-white/60 border-gray-200 backdrop-blur-sm"
-          : "bg-transparent border-transparent"
+          : "bg-transparent border-transparent",
       )}
     >
       <nav className="container flex flex-row items-center justify-between">

@@ -15,7 +15,7 @@ function CollapsedHighlight({ codeString }: { codeString: string }) {
           "",
           collapsed
             ? " max-h-64 overflow-hidden"
-            : " max-h-[600px] overflow-auto"
+            : " max-h-[600px] overflow-auto",
         )}
       >
         <SyntaxHighlighter
@@ -29,7 +29,7 @@ function CollapsedHighlight({ codeString }: { codeString: string }) {
       <div
         className={cn(
           "absolute flex items-center justify-center bg-gradient-to-b from-zinc-700/30 to-zinc-950/90 p-2",
-          !collapsed ? "bottom-0  inset-x-0" : "inset-0"
+          !collapsed ? "bottom-0  inset-x-0" : "inset-0",
         )}
       >
         <Button

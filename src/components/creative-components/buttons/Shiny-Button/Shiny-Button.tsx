@@ -35,7 +35,7 @@ const shinyButtonVariants = cva(
       variant: "default",
       size: "pill",
     },
-  }
+  },
 );
 
 export interface ShinyButtonProps
@@ -54,7 +54,7 @@ const ShinyButton = React.forwardRef<HTMLButtonElement, ShinyButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 ShinyButton.displayName = "ShinyButton";

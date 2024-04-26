@@ -13,7 +13,7 @@ export default function TextScaleHeroPage() {
   const y = useTransform(
     scrollYProgress || new MotionValue(),
     [0, 1],
-    ["0%", "-50%"]
+    ["0%", "-50%"],
   );
   return (
     <main className="bg-black">

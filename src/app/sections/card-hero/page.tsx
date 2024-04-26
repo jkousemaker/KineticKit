@@ -246,7 +246,7 @@ const TiltCard = React.forwardRef<HTMLDivElement, GlassButtonProps>(
         </motion.div>
       </div>
     );
-  }
+  },
 );
 
 TiltCard.displayName = "TiltCard";

@@ -33,7 +33,7 @@ const FadeUp: React.FC<fadeUpProps> = ({
   const opacity = useTransform(
     scrollYProgress,
     opacityOffsets.scroll,
-    opacityOffsets.value
+    opacityOffsets.value,
   );
   const y = useTransform(scrollYProgress, yOffsets.scroll, yOffsets.value);
 

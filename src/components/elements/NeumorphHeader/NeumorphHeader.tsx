@@ -36,7 +36,7 @@ const NeumorphHeader = React.forwardRef<HTMLHeadingElement, HeaderProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 NeumorphHeader.displayName = "NeumorphHeader";

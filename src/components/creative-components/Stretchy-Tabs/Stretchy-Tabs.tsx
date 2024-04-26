@@ -29,22 +29,22 @@ const StretchyTabs = ({
     useTransform(
       difference,
       [0 - tabs.length, 0, tabs.length - 1],
-      [1.2, 1, 1.2]
-    )
+      [1.2, 1, 1.2],
+    ),
   );
   const scaleY = useSpring(
     useTransform(
       difference,
       [0 - tabs.length, 0, tabs.length - 1],
-      [0.8, 1, 0.8]
-    )
+      [0.8, 1, 0.8],
+    ),
   );
   const x = useSpring(
     useTransform(
       difference,
       [0 - tabs.length, 0, tabs.length],
-      ["-20%", "0%", "20%"]
-    )
+      ["-20%", "0%", "20%"],
+    ),
   );
 
   useEffect(() => {

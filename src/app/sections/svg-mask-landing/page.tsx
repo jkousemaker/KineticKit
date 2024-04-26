@@ -5,7 +5,7 @@ import HeroMask from "./Hero-Mask";
 
 export default async function SvgMaskLandingPage() {
   const myBlurDataURL = await getBase64(
-    "https://images.unsplash.com/photo-1471893370050-2c1a36cf555c?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "https://images.unsplash.com/photo-1471893370050-2c1a36cf555c?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   );
   return (
     <main className="min-h-screen relative">

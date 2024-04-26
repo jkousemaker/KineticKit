@@ -11,7 +11,7 @@ const SnugCard = React.forwardRef<
     ref={ref}
     className={cn(
       "rounded-xl border bg-card text-card-foreground shadow",
-      className
+      className,
     )}
     {...props}
   />
@@ -50,7 +50,7 @@ const SnugCardTitle = React.forwardRef<
     ref={ref}
     className={cn(
       "text-2xl leading-5 font-medium tracking-tight -mx-[0.025em] mb-[0.8rem]",
-      className
+      className,
     )}
     {...props}
   />

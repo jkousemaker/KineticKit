@@ -13,7 +13,7 @@ import { useCursorStore } from "@/stores/cursorStore";
 import type { useCursorStoreProps } from "@/stores/cursorStore";
 export default function SectionsPage() {
   const updateVariant = useCursorStore(
-    (state: useCursorStoreProps) => state.updateVariant
+    (state: useCursorStoreProps) => state.updateVariant,
   );
 
   return (

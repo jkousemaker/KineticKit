@@ -49,7 +49,7 @@ const ImageTilt = React.forwardRef<HTMLDivElement, ImageTiltProps>(
         </motion.div>
       </div>
     );
-  }
+  },
 );
 
 ImageTilt.displayName = "ImageTilt";

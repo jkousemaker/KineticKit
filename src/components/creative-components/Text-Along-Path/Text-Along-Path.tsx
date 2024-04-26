@@ -48,7 +48,7 @@ function TextAlongPath({
       paths.current.forEach((path, i) => {
         (path as SVGTextPathElement).setAttribute(
           "startOffset",
-          -40 + i * 40 + e * multiplier + "%"
+          -40 + i * 40 + e * multiplier + "%",
         );
       });
     });

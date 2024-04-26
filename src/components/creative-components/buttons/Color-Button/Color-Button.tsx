@@ -22,7 +22,7 @@ const colorButtonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ColorButtonProps
@@ -43,7 +43,7 @@ const ColorButton = React.forwardRef<HTMLButtonElement, ColorButtonProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Component = asChild ? Slot : "button";
     return (
@@ -145,7 +145,7 @@ const ColorButton = React.forwardRef<HTMLButtonElement, ColorButtonProps>(
         </motion.div>
       </Component>
     );
-  }
+  },
 );
 
 ColorButton.displayName = "ColorButton";

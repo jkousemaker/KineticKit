@@ -25,7 +25,7 @@ const InformationCard = ({
       whileHover="hover"
       className={cn(
         "z-[1] cursor-pointer flex flex-col relative w-[350px] ",
-        className
+        className,
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

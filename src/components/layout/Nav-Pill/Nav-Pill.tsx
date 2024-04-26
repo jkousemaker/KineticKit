@@ -16,7 +16,7 @@ function useBoundedScroll(threshold: number) {
   let scrollYBoundedProgress = useTransform(
     scrollYBounded,
     [0, threshold],
-    [0, 1]
+    [0, 1],
   );
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const NavPill = ({}) => {
   let scrollYBoundedProgressDelayed = useTransform(
     scrollYBoundedProgress,
     [0, 0.75, 1],
-    [0, 0, 1]
+    [0, 0, 1],
   );
 
   return (
@@ -48,7 +48,7 @@ const NavPill = ({}) => {
           backgroundColor: useMotionTemplate`rgb(255 255 255 / ${useTransform(
             scrollYBoundedProgressDelayed,
             [0, 1],
-            [1, 0.1]
+            [1, 0.1],
           )})`,
         }}
         className=" flex max-w-xl mx-auto border-2 rounded-full py-2 px-6 pointer-events-auto"
@@ -60,7 +60,7 @@ const NavPill = ({}) => {
               opacity: useTransform(
                 scrollYBoundedProgressDelayed,
                 [0, 1],
-                [1, 0]
+                [1, 0],
               ),
             }}
             className="flex space-x-4 text-sm font-medium text-slate-400"

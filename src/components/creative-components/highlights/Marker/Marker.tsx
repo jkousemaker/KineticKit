@@ -34,7 +34,7 @@ export interface MarkerProps
 const Marker = React.forwardRef<HTMLElement, MarkerProps>(
   (
     { className, children, once = true, margin = "-100px", variant, origin },
-    ref
+    ref,
   ) => {
     const letters = children.split("") as string[];
     return (
@@ -72,7 +72,7 @@ const Marker = React.forwardRef<HTMLElement, MarkerProps>(
         <Background letters={letters} variant={variant} origin={origin} />
       </motion.mark>
     );
-  }
+  },
 );
 
 const backgroundVariants = cva("absolute inset-0 w-full h-full z-10", {
@@ -122,7 +122,7 @@ const Background = ({
           variant: variant as any,
           origin: origin as any,
           className,
-        })
+        }),
       )}
     ></motion.span>
   );

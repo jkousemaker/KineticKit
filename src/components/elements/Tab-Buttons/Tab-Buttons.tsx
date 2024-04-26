@@ -18,7 +18,7 @@ function TabButtons({
         variant="ghost"
         className={cn(
           "w-32 gap-1 relative z-10",
-          isPreview && "!text-white z-20"
+          isPreview && "!text-white z-20",
         )}
         onClick={() => setTab("preview")}
       >
@@ -37,7 +37,7 @@ function TabButtons({
         variant="ghost"
         className={cn(
           "w-32 gap-1 relative z-10",
-          !isPreview && "!text-white z-20"
+          !isPreview && "!text-white z-20",
         )}
         onClick={() => setTab("code")}
       >

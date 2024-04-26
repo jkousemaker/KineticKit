@@ -112,7 +112,7 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
     <div
       className={cn(
         " w-full h-screen overflow-hidden",
-        finishedAnimation && "!h-fit"
+        finishedAnimation && "!h-fit",
       )}
     >
       <div className="">

@@ -30,7 +30,7 @@ const glowButtonVariants = cva(
       variant: "default",
       size: "sm",
     },
-  }
+  },
 );
 
 export interface GlowButtonProps
@@ -54,7 +54,7 @@ const GlowButton = React.forwardRef<HTMLButtonElement, GlowButtonProps>(
         </span>
       </Component>
     );
-  }
+  },
 );
 
 GlowButton.displayName = "GlowButton";
@@ -92,7 +92,7 @@ const GlowButtonBackground = React.forwardRef<
     time,
     [0, 10000], // For every 4 seconds...
     [0, 360], // ...rotate 360deg
-    { clamp: false }
+    { clamp: false },
   );
   return (
     <span

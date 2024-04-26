@@ -73,7 +73,7 @@ export default function StepsPage() {
                     onClick={() => setActiveStep(step.title)}
                     className={cn(
                       "text-black",
-                      step.title == activeStep && "text-red-500"
+                      step.title == activeStep && "text-red-500",
                     )}
                   >
                     {step.title}

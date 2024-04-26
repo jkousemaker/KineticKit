@@ -144,7 +144,7 @@ const sectionVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 export interface SectionProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -167,22 +167,22 @@ const Section = React.forwardRef<HTMLDivElement, SectionProps>(
         "brightness(100%) contrast(100%)",
         "brightness(80%) contrast(135%)",
         "brightness(0%) contrast(200%)",
-      ]
+      ],
     );
     const y = useTransform(
       scrollYProgress || new MotionValue(),
       [0, 1],
-      ["0%", "-20%"]
+      ["0%", "-20%"],
     );
     const imgY = useTransform(
       scrollYProgress || new MotionValue(),
       [0, 1.5],
-      ["0%", "-40%"]
+      ["0%", "-40%"],
     );
     const imgRotate = useTransform(
       scrollYProgress || new MotionValue(),
       [0, 1],
-      ["0deg", "-20deg"]
+      ["0deg", "-20deg"],
     );
 
     return (
@@ -211,6 +211,6 @@ const Section = React.forwardRef<HTMLDivElement, SectionProps>(
         </p>
       </motion.section>
     );
-  }
+  },
 );
 Section.displayName = "Section";

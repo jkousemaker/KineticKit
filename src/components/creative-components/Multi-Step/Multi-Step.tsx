@@ -97,13 +97,13 @@ const StepIndicator = ({ value, state }: { value: number; state: number }) => {
   return (
     <div
       className={cn(
-        "  h-10 w-10 flex justify-center items-center relative transition-colors duration-500 ease-out"
+        "  h-10 w-10 flex justify-center items-center relative transition-colors duration-500 ease-out",
       )}
     >
       <div
         className={cn(
           "absolute w-full h-full inset-0 z-20 rounded-full",
-          isCompleted ? "bg-purple-500" : "bg-black"
+          isCompleted ? "bg-purple-500" : "bg-black",
         )}
       ></div>
       <AnimatePresence>

@@ -67,7 +67,7 @@ const Section = ({
         transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
         className={cn(
           "mx-2 border-l",
-          !open && toggleable && "pointer-events-none"
+          !open && toggleable && "pointer-events-none",
         )}
       >
         {links.map((link, index) => (
@@ -84,7 +84,7 @@ const Section = ({
                 <span
                   className={cn(
                     "block  group-hover:translate-x-1 group-hover:text-theme-light transition-all duration-200",
-                    link.href === pathname ? "text-theme" : "text-[#71717a]"
+                    link.href === pathname ? "text-theme" : "text-[#71717a]",
                   )}
                 >
                   {link.title}
@@ -116,7 +116,7 @@ const Accordion = ({
       <h4
         className={cn(
           "!text-lg !font-semibold group-hover:!text-theme-light",
-          state && "!text-theme"
+          state && "!text-theme",
         )}
       >
         {title}
@@ -124,7 +124,7 @@ const Accordion = ({
       <ChevronUpIcon
         className={cn(
           "h-5 w-5 transition-transform group-hover:!text-theme-light group-hover:scale-150 rotate-90 ",
-          state && "!rotate-180 !text-theme"
+          state && "!rotate-180 !text-theme",
         )}
       />
     </Button>

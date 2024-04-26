@@ -21,7 +21,7 @@ export default function QuadPerspectivePage() {
   const scaleImgWrap = useTransform(
     scrollYProgress,
     [0.1, 0.8, 1],
-    [0.5, 2, 3.5]
+    [0.5, 2, 3.5],
   );
   const rotateZImgWrap = useTransform(scrollYProgress, [0.1, 1], [0, 180]);
   const opacityImgWrap = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
@@ -31,13 +31,13 @@ export default function QuadPerspectivePage() {
   const text2Opacity = useTransform(
     scrollYProgress,
     [0.2, 0.4, 0.5],
-    [0, 1, 0]
+    [0, 1, 0],
   );
   const text3Scale = useTransform(scrollYProgress, [0.5, 0.7], [0.8, 1]);
   const text3Opacity = useTransform(
     scrollYProgress,
     [0.5, 0.7, 0.8],
-    [0, 1, 0]
+    [0, 1, 0],
   );
   return (
     <main className="h-[4500px] w-full relative ">

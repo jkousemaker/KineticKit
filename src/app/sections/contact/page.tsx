@@ -260,7 +260,7 @@ const Badge = ({ className, text }: { className: string; text: string }) => {
     <div
       className={cn(
         "whitespace-nowrap block mx-[1em] relative z-[1] bg-[#272B4D] px-4 leading-[40px] rounded-3xl text-white font-bold",
-        className
+        className,
       )}
     >
       {text}

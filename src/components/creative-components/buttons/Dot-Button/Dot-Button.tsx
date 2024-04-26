@@ -26,7 +26,7 @@ const dotButtonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface DotButtonProps
@@ -44,7 +44,7 @@ const createComponent = (asChild: boolean) => {
 const DotButton = React.forwardRef<HTMLButtonElement, DotButtonProps>(
   (
     { className, asChild = false, variant, size, children, icon, ...props },
-    ref
+    ref,
   ) => {
     const Component = createComponent(asChild);
 
@@ -80,7 +80,7 @@ const DotButton = React.forwardRef<HTMLButtonElement, DotButtonProps>(
         </Component>
       </motion.div>
     );
-  }
+  },
 );
 
 DotButton.displayName = "DotButton";
@@ -185,7 +185,7 @@ const createDotButtonIcon = (props: DotButtonIconProps) => {
 const DotButtonIcon = React.forwardRef<HTMLSpanElement, DotButtonIconProps>(
   (props, ref) => {
     return createDotButtonIcon(props);
-  }
+  },
 );
 DotButtonIcon.displayName = "DotButtonIcon";
 export { DotButton, dotButtonVariants, DotButtonIcon };
