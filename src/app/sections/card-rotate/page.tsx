@@ -93,19 +93,22 @@ const Card = ({
   index: number;
   length: number;
 }) => {
-  const [window, setWindow] = useState({ width: 0, height: 0 });
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const image = useRef(null);
   const height = 200;
   const radius1 = 50 + height / 2;
   useEffect(() => {
     if (window) {
-      setWindow({ width: window.innerWidth, height: window.innerHeight });
+      setWindowSize({
+        width: (window as Window).innerWidth,
+        height: (window as Window).innerHeight,
+      });
     }
   }, [window]);
   return (
     <motion.div
       initial={{
-        y: window.innerHeight / 2 + height * 1.5,
+        y: windowSize.height / 2 + height * 1.5,
         rotateX: -180,
         scale: 3,
       }}
