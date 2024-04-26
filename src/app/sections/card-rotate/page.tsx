@@ -98,13 +98,13 @@ const Card = ({
   const height = 200;
   const radius1 = 50 + height / 2;
   useEffect(() => {
-    if (window) {
+    if (typeof window !== "undefined") {
       setWindowSize({
         width: (window as Window).innerWidth,
         height: (window as Window).innerHeight,
       });
     }
-  }, [window]);
+  }, []);
   return (
     <motion.div
       initial={{
