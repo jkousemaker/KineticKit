@@ -11,7 +11,7 @@ export default function AztecPage() {
     offset: ["start end", "end start"],
   });
   return (
-    <main ref={controls} className="h-[500vh]">
+    <main ref={controls} className="h-screen">
       <Scene scrollYProgress={scrollYProgress} />
     </main>
   );

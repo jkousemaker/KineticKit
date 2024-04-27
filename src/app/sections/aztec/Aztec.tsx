@@ -6,6 +6,7 @@ import { MotionValue, useTransform } from "framer-motion";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 ("/three/lamborghini_huracan_evo_spyder.glb");
+import { useControls } from "leva";
 export function Model({
   scrollYProgress,
   colorMap,
@@ -14,7 +15,7 @@ export function Model({
 }: {
   scrollYProgress: MotionValue;
   colorMap?: any;
-  className: string;
+  className?: string;
 }) {
   useFrame(() => {
     //console.log("Hey, I'm executing every frame!");
@@ -23,6 +24,6 @@ export function Model({
     GLTFLoader,
     "/three/lamborghini_huracan_evo_spyder.glb",
   );
-  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
   return <primitive {...props} object={gltf.scene} />;
 }
