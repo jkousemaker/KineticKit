@@ -1,5 +1,24 @@
 export const sections = [
   {
+    title: "Aztec",
+    description: "A modern aztec effect",
+    href: "/sections/aztec",
+    stack: ["React Three Fiber", "framer-motion"],
+    badge: "Polished",
+    badgeVariation: "success",
+    imgSrc: "/screenshots/aztec.png",
+  },
+  {
+    title: "Layered Parralax",
+    description: "A modern layered parralax effect",
+    href: "/sections/layered-parralax",
+    stack: ["Next.js", "framer-motion", "TypeScript", "Tailwind CSS"],
+    badge: "Polished",
+    badgeVariation: "success",
+    imgSrc: "/screenshots/layered-parralax.png",
+  },
+
+  {
     title: "Wave Three",
     description: "A modern wave effect",
     href: "/sections/wave-three",

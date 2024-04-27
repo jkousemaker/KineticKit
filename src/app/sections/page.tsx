@@ -32,7 +32,7 @@ export default function SectionsPage() {
             href={section.href}
             className="mx-auto interactable"
           >
-            <div className="rounded-2xl pt-[133.33%] z-0 w-full relative overflow-hidden">
+            <div className="rounded-2xl pt-[133.33%] z-0 w-full relative">
               <InformationCardPopup
                 stack={section.stack}
               ></InformationCardPopup>

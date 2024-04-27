@@ -1,11 +1,5 @@
 "use client";
-import {
-  motion,
-  useTransform,
-  AnimatePresence,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { motion, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -74,8 +68,8 @@ const Employee = ({
       )}
       <Image
         src={item.image}
-        width={10000}
-        height={10000}
+        width={100}
+        height={100}
         unoptimized
         placeholder="blur"
         blurDataURL={blurDataUrl}
