@@ -25,5 +25,5 @@ export function Model({
     "/three/lamborghini_huracan_evo_spyder.glb",
   );
 
-  return <primitive {...props} object={gltf.scene} />;
+  return <motion.primitive {...props} object={gltf.scene} />;
 }
