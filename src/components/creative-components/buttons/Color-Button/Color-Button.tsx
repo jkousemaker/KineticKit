@@ -26,7 +26,7 @@ const colorButtonVariants = cva(
 );
 
 export interface ColorButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement | HTMLElement>,
     VariantProps<typeof colorButtonVariants> {
   asChild?: boolean;
   bgColors?: string[];
