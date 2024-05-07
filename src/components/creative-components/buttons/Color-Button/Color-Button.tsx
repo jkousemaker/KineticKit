@@ -70,7 +70,7 @@ const ColorButton = React.forwardRef<HTMLButtonElement, ColorButtonProps>(
               ease: [0.19, 1, 0.22, 1],
             }}
             style={{
-              backgroundColor: bgColors.findLast((color) => color),
+              backgroundColor: bgColors[bgColors.length - 1],
             }}
           >
             <span className="absolute w-[max(200%,_10rem)] aspect-square left-1/2 -top-[60%] -translate-x-1/2 block">
