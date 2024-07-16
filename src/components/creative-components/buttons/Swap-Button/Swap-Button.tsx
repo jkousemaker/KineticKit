@@ -29,10 +29,8 @@ const SwapButton = ({ text }: { text: string }) => {
 const SwapButtonIcon = () => {
   return (
     <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      exit={{ scale: 0 }}
-      className="w-12 h-12 bg-black rounded-2xl flex justify-center items-center"
+      layoutId="text"
+      className="w-12 h-12 bg-black rounded-2xl flex justify-center items-center z-0"
     >
       <ArrowLeftIcon className="w-5 h-5 text-white" />
     </motion.div>

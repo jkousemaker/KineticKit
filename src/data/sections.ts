@@ -181,4 +181,13 @@ export const sections = [
     badgeVariation: "warning",
     imgSrc: "/screenshots/quad-sticky.png",
   },
+  {
+    title: "Icons Hero",
+    description: "An apple inspired component with a sticky effect.",
+    href: "/sections/icons-hero",
+    stack: ["Next.js", "framer-motion", "TypeScript", "Tailwind CSS"],
+    badge: "Reworking",
+    badgeVariation: "warning",
+    imgSrc: "/screenshots/quad-sticky.png",
+  },
 ];
