@@ -115,7 +115,7 @@ export default function HeroMask({ children }: { children: React.ReactNode }) {
       )}
     >
       <div className="">
-        <svg ref={scope} width={2000} height={2000} className="h-full w-full">
+        <svg ref={scope} width={2000} height={2000} className="h-full w-full ">
           <defs>
             <clipPath id="cut-bottom">
               <motion.rect

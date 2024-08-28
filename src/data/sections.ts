@@ -1,5 +1,14 @@
 export const sections = [
   {
+    title: "Grid Clip Mask",
+    description: "A modern grid image mask",
+    href: "/sections/grid-clip-mask",
+    stack: ["React Three Fiber", "framer-motion"],
+    badge: "Polished",
+    badgeVariation: "success",
+    imgSrc: "/screenshots/aztec.png",
+  },
+  {
     title: "Aztec",
     description: "A modern aztec effect",
     href: "/sections/aztec",
