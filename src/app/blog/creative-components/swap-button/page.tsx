@@ -11,6 +11,12 @@ export default function SwapButtonPage() {
           <SwapButton text="Learn more" />
         </Tabs>
       </div>
+      <PageHeader title="Reactive Button" />
+      <div className="pt-8 pb-12">
+        <Tabs codeString={codeString}>
+          <SwapButton text="Learn more" />
+        </Tabs>
+      </div>
     </main>
   );
 }

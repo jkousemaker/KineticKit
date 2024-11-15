@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { motion } from "framer-motion";
 
 const colorButtonVariants = cva(
-  "relative cursor-pointer overflow-hidden z-50 focus:ring whitespace-nowrap transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "relative cursor-pointer pointer-events-auto overflow-hidden z-50 focus:ring whitespace-nowrap transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -26,7 +26,9 @@ const colorButtonVariants = cva(
 );
 
 export interface ColorButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement | HTMLElement>,
+  extends React.ButtonHTMLAttributes<
+      HTMLButtonElement | HTMLAnchorElement | HTMLElement
+    >,
     VariantProps<typeof colorButtonVariants> {
   asChild?: boolean;
   bgColors?: string[];
